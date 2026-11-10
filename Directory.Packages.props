@@ -10,7 +10,7 @@
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.303" />
 
     <!-- Validation -->
-    <PackageVersion Include="FluentValidation" Version="11.12.0" />
+    <PackageVersion Include="FluentValidation" Version="12.2.0" />
     <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="11.12.0" />
 
     <!-- Testing & Architecture rules -->

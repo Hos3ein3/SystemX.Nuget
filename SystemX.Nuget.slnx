@@ -5,8 +5,8 @@
   <Folder Name="/docs/" />
   <Folder Name="/src/">
     <Project Path="src/SystemX.Application.Abstractions/SystemX.Application.Abstractions.csproj" />
-    <Project Path="src/SystemX.Contracts.Validation/SystemX.Contracts.Validation.csproj" />
     <Project Path="src/SystemX.Contracts/SystemX.Contracts.csproj" />
+    <Project Path="src/SystemX.Contracts.Validation/SystemX.Contracts.Validation.csproj" />
     <Project Path="src/SystemX.Infrastructure/SystemX.Infrastructure.csproj" />
     <Project Path="src/SystemX.Infrastructure.Caching/SystemX.Infrastructure.Caching.csproj" />
     <Project Path="src/SystemX.Infrastructure.Cors/SystemX.Infrastructure.Cors.csproj" />
@@ -32,6 +32,7 @@
     <Project Path="tests/SystemX.Application.Abstractions.Tests/SystemX.Application.Abstractions.Tests.csproj" />
     <Project Path="tests/SystemX.ArchitectureTests/SystemX.ArchitectureTests.csproj" />
     <Project Path="tests/SystemX.Contracts.Tests/SystemX.Contracts.Tests.csproj" />
+    <Project Path="tests/SystemX.Contracts.Validation.Tests/SystemX.Contracts.Validation.Tests.csproj" />
     <Project Path="tests/SystemX.Infrastructure.Caching.Tests/SystemX.Infrastructure.Caching.Tests.csproj" />
     <Project Path="tests/SystemX.Infrastructure.Cors.Tests/SystemX.Infrastructure.Cors.Tests.csproj" />
     <Project Path="tests/SystemX.Infrastructure.Cqrs.Tests/SystemX.Infrastructure.Cqrs.Tests.csproj" />
@@ -47,7 +48,9 @@
     <Project Path="tests/SystemX.Infrastructure.Persistence.SqlServer.Tests/SystemX.Infrastructure.Persistence.SqlServer.Tests.csproj" />
     <Project Path="tests/SystemX.Infrastructure.RateLimiter.Tests/SystemX.Infrastructure.RateLimiter.Tests.csproj" />
     <Project Path="tests/SystemX.Infrastructure.Resilience.Tests/SystemX.Infrastructure.Resilience.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Serialization.Tests/SystemX.Infrastructure.Serialization.Tests.csproj" />
     <Project Path="tests/SystemX.Infrastructure.Tests/SystemX.Infrastructure.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Validation.Tests/SystemX.Infrastructure.Validation.Tests.csproj" />
     <Project Path="tests/SystemX.Infrastructure.Web.Tests/SystemX.Infrastructure.Web.Tests.csproj" />
     <Project Path="tests/SystemX.SharedKernel.Tests/SystemX.SharedKernel.Tests.csproj" />
   </Folder>

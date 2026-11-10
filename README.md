@@ -6,57 +6,65 @@ For architectural layering and package reference restrictions, refer to [AGENTS.
 
 ## 1. Overview and Packages
 
-| Package | Description | Installation |
+| Package | Purpose / Description | Installation |
 |---|---|---|
-| `SystemX.SharedKernel` | Core domain primitives, Entity, ValueObject, Result, Guards, Clock | `dotnet add package SystemX.SharedKernel` |
-| `SystemX.Contracts` | Common DTOs, requests/responses, integration events | `dotnet add package SystemX.Contracts` |
-| `SystemX.Application.Abstractions` | CQRS, Unit of Work, and repository abstractions | `dotnet add package SystemX.Application.Abstractions` |
-| `SystemX.Infrastructure` | Metapackage aggregating infrastructure components | `dotnet add package SystemX.Infrastructure` |
-| `SystemX.Infrastructure.Caching` | Caching abstractions and providers | `dotnet add package SystemX.Infrastructure.Caching` |
-| `SystemX.Infrastructure.Cors` | Cross-Origin Resource Sharing extensions | `dotnet add package SystemX.Infrastructure.Cors` |
-| `SystemX.Infrastructure.Cqrs` | CQRS messaging and mediator infrastructure | `dotnet add package SystemX.Infrastructure.Cqrs` |
-| `SystemX.Infrastructure.HealthChecks` | Health checking infrastructure | `dotnet add package SystemX.Infrastructure.HealthChecks` |
-| `SystemX.Infrastructure.Localization` | Internationalization and localization support | `dotnet add package SystemX.Infrastructure.Localization` |
-| `SystemX.Infrastructure.Logging` | Structured logging integrations | `dotnet add package SystemX.Infrastructure.Logging` |
-| `SystemX.Infrastructure.Messaging` | Asynchronous message broker abstractions | `dotnet add package SystemX.Infrastructure.Messaging` |
-| `SystemX.Infrastructure.MultiTenancy` | Multi-tenancy isolation and tenant resolution | `dotnet add package SystemX.Infrastructure.MultiTenancy` |
-| `SystemX.Infrastructure.Observability` | Metrics, tracing, and OpenTelemetry instrumentation | `dotnet add package SystemX.Infrastructure.Observability` |
-| `SystemX.Infrastructure.Persistence.EfCore` | Base Entity Framework Core data access | `dotnet add package SystemX.Infrastructure.Persistence.EfCore` |
-| `SystemX.Infrastructure.Persistence.Mongo` | MongoDB persistence integration | `dotnet add package SystemX.Infrastructure.Persistence.Mongo` |
-| `SystemX.Infrastructure.Persistence.Postgresql` | PostgreSQL persistence provider using EF Core | `dotnet add package SystemX.Infrastructure.Persistence.Postgresql` |
-| `SystemX.Infrastructure.Persistence.SqlServer` | SQL Server persistence provider using EF Core | `dotnet add package SystemX.Infrastructure.Persistence.SqlServer` |
-| `SystemX.Infrastructure.RateLimiter` | Rate limiting and throttling components | `dotnet add package SystemX.Infrastructure.RateLimiter` |
-| `SystemX.Infrastructure.Resilience` | Fault-tolerance and Polly resilience pipelines | `dotnet add package SystemX.Infrastructure.Resilience` |
-| `SystemX.Infrastructure.Web` | ASP.NET Core web abstractions and middleware | `dotnet add package SystemX.Infrastructure.Web` |
+| `SystemX.SharedKernel` | Domain and application building blocks shared by all apps: Entity, AggregateRoot, ValueObject, Enumeration, domain events, business rules, Result and Error, Guard, IClock, strongly-typed IDs, specifications, pagination types, audit/soft-delete/tenant markers. | `dotnet add package SystemX.SharedKernel` |
+| `SystemX.Contracts` | The public data shapes exchanged between services and clients: Request/response DTOs, `PagedRequest`/`PagedResponse<T>`, integration events, error codes. Plain records. | `dotnet add package SystemX.Contracts` |
+| `SystemX.Application.Abstractions` | The interfaces the application layer codes against: `ICommand`, `IQuery`, handler interfaces, dispatcher interfaces, `IUnitOfWork`, `IRepository<T>`, `IReadRepository<T>`, `ICurrentUser`, `ITenantContext`, `ICurrentCulture`, `ICacheService`, `IEventBus`. | `dotnet add package SystemX.Application.Abstractions` |
+| `SystemX.Contracts.Validation` | FluentValidation validators for the shared DTOs in `SystemX.Contracts`. Lets clients and services validate the same DTOs without making `Contracts` depend on FluentValidation. | `dotnet add package SystemX.Contracts.Validation` |
+| `SystemX.Infrastructure.Validation` | Runs FluentValidation on commands and queries through a handler decorator. Turns failures into `Result` with `ValidationError` (or throws `RequestValidationException`). Provides reusable rules for IDs. | `dotnet add package SystemX.Infrastructure.Validation` |
+| `SystemX.Infrastructure.Serialization` | `System.Text.Json` support: converters and type converters for strongly-typed IDs and other SystemX types. | `dotnet add package SystemX.Infrastructure.Serialization` |
+| `SystemX.Infrastructure` | Convenience package for the common Infrastructure packages. Contains NO source code, only references. | `dotnet add package SystemX.Infrastructure` |
+| `SystemX.Infrastructure.Caching` | Cache abstraction implementations (memory, Redis), cache decorators and key conventions. | `dotnet add package SystemX.Infrastructure.Caching` |
+| `SystemX.Infrastructure.Cors` | CORS policy setup with options. | `dotnet add package SystemX.Infrastructure.Cors` |
+| `SystemX.Infrastructure.Cqrs` | Command/query dispatchers (no MediatR), handler registration and handler decorators (logging, transaction). | `dotnet add package SystemX.Infrastructure.Cqrs` |
+| `SystemX.Infrastructure.HealthChecks` | Health check registration and endpoints (liveness, readiness), checks for the SystemX data and cache providers. | `dotnet add package SystemX.Infrastructure.HealthChecks` |
+| `SystemX.Infrastructure.Localization` | Culture resolution, resource-based localization, `ICurrentCulture` implementation. | `dotnet add package SystemX.Infrastructure.Localization` |
+| `SystemX.Infrastructure.Logging` | Structured logging setup (for example Serilog), enrichers (correlation id, tenant, user), log options. | `dotnet add package SystemX.Infrastructure.Logging` |
+| `SystemX.Infrastructure.Messaging` | Event bus, integration-event publishing and consuming, outbox/inbox. | `dotnet add package SystemX.Infrastructure.Messaging` |
+| `SystemX.Infrastructure.MultiTenancy` | Tenant resolution (header, claim, host), `ITenantContext` implementation, tenant query filters. | `dotnet add package SystemX.Infrastructure.MultiTenancy` |
+| `SystemX.Infrastructure.Observability` | OpenTelemetry traces and metrics, exporters, instrumentation, naming conventions. | `dotnet add package SystemX.Infrastructure.Observability` |
+| `SystemX.Infrastructure.Persistence.EfCore` | Provider-neutral EF Core base: `UnitOfWork`, generic repositories, specification evaluator, interceptors (audit, soft delete, tenant, domain-event dispatch), strongly-typed ID value converters. | `dotnet add package SystemX.Infrastructure.Persistence.EfCore` |
+| `SystemX.Infrastructure.Persistence.Mongo` | MongoDB repositories, serializers and conventions. Independent from EF Core. | `dotnet add package SystemX.Infrastructure.Persistence.Mongo` |
+| `SystemX.Infrastructure.Persistence.Postgresql` | PostgreSQL provider setup on top of `EfCore` (Npgsql, PostgreSQL specifics only). | `dotnet add package SystemX.Infrastructure.Persistence.Postgresql` |
+| `SystemX.Infrastructure.Persistence.SqlServer` | SQL Server provider setup on top of `EfCore` (connection, options, SQL Server specifics only). | `dotnet add package SystemX.Infrastructure.Persistence.SqlServer` |
+| `SystemX.Infrastructure.RateLimiter` | Rate-limiting policies (ASP.NET Core rate limiting) with options. | `dotnet add package SystemX.Infrastructure.RateLimiter` |
+| `SystemX.Infrastructure.Resilience` | Retry, timeout, circuit breaker and bulkhead policies (Polly / Microsoft.Extensions.Resilience) with options. | `dotnet add package SystemX.Infrastructure.Resilience` |
+| `SystemX.Infrastructure.Web` | ASP.NET Core pipeline setup: middleware, ProblemDetails, API versioning, Swagger, Result-to-HTTP mapping, JSON option wiring. | `dotnet add package SystemX.Infrastructure.Web` |
 
 ## 2. Dependency Architecture
 
 ```mermaid
 flowchart TD
-    SK[SystemX.SharedKernel]
-    C[SystemX.Contracts]
-    AA[SystemX.Application.Abstractions] --> SK
+    SK["SystemX.SharedKernel"]
+    C["SystemX.Contracts"]
+    AA["SystemX.Application.Abstractions"] --> SK
     
-    InfraGeneral[SystemX.Infrastructure.*]
-    InfraGeneral --> SK
+    CV["SystemX.Contracts.Validation"] --> C
+    
+    InfraSerial["SystemX.Infrastructure.Serialization"] --> SK
+    InfraValid["SystemX.Infrastructure.Validation"] --> SK
+    InfraValid --> C
+    InfraValid --> AA
+    
+    InfraGeneral["SystemX.Infrastructure.*"] --> SK
     InfraGeneral --> C
     InfraGeneral --> AA
     
-    EfCore[SystemX.Infrastructure.Persistence.EfCore] --> SK
+    EfCore["SystemX.Infrastructure.Persistence.EfCore"] --> SK
     EfCore --> C
     EfCore --> AA
 
-    SqlServer[SystemX.Infrastructure.Persistence.SqlServer] --> EfCore
-    Postgresql[SystemX.Infrastructure.Persistence.Postgresql] --> EfCore
-    Mongo[SystemX.Infrastructure.Persistence.Mongo] --> SK
+    SqlServer["SystemX.Infrastructure.Persistence.SqlServer"] --> EfCore
+    Postgresql["SystemX.Infrastructure.Persistence.Postgresql"] --> EfCore
+    Mongo["SystemX.Infrastructure.Persistence.Mongo"] --> SK
     Mongo --> C
     Mongo --> AA
 
-    Meta[SystemX.Infrastructure] --> InfraGeneral
+    Meta["SystemX.Infrastructure"] --> InfraValid
+    Meta --> InfraSerial
+    Meta --> InfraGeneral
     Meta --> EfCore
-    Meta --> SqlServer
-    Meta --> Postgresql
-    Meta --> Mongo
 ```
 
 ## 3. Documentation
@@ -74,8 +82,25 @@ Links to detailed feature documentation and complete, compilable examples:
 - [SoftDelete](docs/SystemX.SharedKernel/SoftDelete.md)
 - [MultiTenancy](docs/SystemX.SharedKernel/MultiTenancy.md)
 - [ResultPattern](docs/SystemX.SharedKernel/ResultPattern.md)
+- [ValidationResults](docs/SystemX.SharedKernel/ValidationResults.md)
 - [Guard](docs/SystemX.SharedKernel/Guard.md)
 - [Clock](docs/SystemX.SharedKernel/Clock.md)
+- [StronglyTypedIds](docs/SystemX.SharedKernel/StronglyTypedIds.md)
+- [Specifications](docs/SystemX.SharedKernel/Specifications.md)
+- [Pagination](docs/SystemX.SharedKernel/Pagination.md)
+
+### SystemX.Contracts
+- [Pagination](docs/SystemX.Contracts/Pagination.md)
+
+### SystemX.Contracts.Validation
+- [ContractValidators](docs/SystemX.Contracts.Validation/ContractValidators.md)
+
+### SystemX.Infrastructure.Validation
+- [Validation](docs/SystemX.Infrastructure.Validation/Validation.md)
+- [ValidationRules](docs/SystemX.Infrastructure.Validation/ValidationRules.md)
+
+### SystemX.Infrastructure.Serialization
+- [StronglyTypedIdJson](docs/SystemX.Infrastructure.Serialization/StronglyTypedIdJson.md)
 
 ## 4. How to publish packages to NuGet
 
@@ -101,82 +126,82 @@ dotnet nuget push "artifacts/*.nupkg" --source https://api.nuget.org/v3/index.js
 ```
 
 ### 4.4 Publishing Rules
-- **Immutability**: Published package versions on nuget.org are immutable and cannot be deleted (only unlisted).
-- **Prerelease First**: Always publish `-preview.N` versions for verification prior to major/minor production releases.
-- **Changelog**: Ensure [CHANGELOG.md](CHANGELOG.md) is updated under `## [Unreleased]` before triggering a version bump.
+- Published package versions cannot be deleted (only unlisted). For test releases, use prerelease identifiers (`-preview.N`).
+- Always update `CHANGELOG.md` under `## [Unreleased]` prior to releasing.
 
 ## 5. How to add the packages to your projects
 
-### 5.1 Direct Installation
-Add packages via the .NET CLI:
+### 5.1 Direct CLI Reference
+Add packages directly using the .NET CLI:
 ```bash
 dotnet add package SystemX.SharedKernel
-# Or for prerelease versions:
+dotnet add package SystemX.Contracts
+# For prerelease versions:
 dotnet add package SystemX.SharedKernel --prerelease
 ```
 
 ### 5.2 Central Package Management (CPM)
-When using CPM in your solution, specify package versions in `Directory.Packages.props`:
+In repositories using Central Package Management (`Directory.Packages.props`):
 ```xml
 <ItemGroup>
   <PackageVersion Include="SystemX.SharedKernel" Version="1.0.0" />
+  <PackageVersion Include="SystemX.Contracts" Version="1.0.0" />
   <PackageVersion Include="SystemX.Infrastructure" Version="1.0.0" />
 </ItemGroup>
 ```
-And reference them in individual project files without specifying a version:
+
+In `.csproj`:
 ```xml
 <ItemGroup>
   <PackageReference Include="SystemX.SharedKernel" />
 </ItemGroup>
 ```
 
-### 5.3 Meta-package vs Individual Packages
-- **Meta-package (`SystemX.Infrastructure`)**: Best for monolithic applications or quick scaffolding where all technical concerns are needed at once.
-- **Granular packages (`SystemX.Infrastructure.Caching`, `SystemX.Infrastructure.Logging`, etc.)**: Ideal for clean, trimmed microservices or modular architectures that only take dependencies on required concerns.
+### 5.3 Metapackage vs Individual Packages
+- Install `SystemX.Infrastructure` when you want a batteries-included infrastructure setup for an API or application.
+- Install individual packages (e.g. `SystemX.Infrastructure.Caching`, `SystemX.Infrastructure.Validation`) to keep dependencies minimal. Note that provider-specific packages like `SystemX.Infrastructure.Persistence.SqlServer`, `SystemX.Infrastructure.Persistence.Postgresql`, and `SystemX.Contracts.Validation` must always be referenced individually.
 
-### 5.4 Minimal Registration Example (`Program.cs`)
+### 5.4 Minimal Program.cs Setup
 ```csharp
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using SystemX.SharedKernel.Time;
+using SystemX.Infrastructure.Serialization;
+using SystemX.Infrastructure.Validation;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register primitives
-builder.Services.AddSingleton<IClock>(SystemClock.Instance);
+// Register serialization and validation
+builder.Services.AddSystemXSerialization();
+builder.Services.AddSystemXValidation([typeof(Program).Assembly]);
 
 var app = builder.Build();
-app.MapGet("/", (IClock clock) => $"Current UTC Time: {clock.UtcNow}");
 app.Run();
 ```
 
-### 5.5 Private and Local NuGet Feeds
-To consume packages from a local build or custom feed, configure `nuget.config`:
+### 5.5 Private and Local Feeds
+To consume from GitHub Packages or Azure Artifacts, configure `nuget.config`:
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <packageSources>
-    <clear />
     <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
-    <add key="local" value="./artifacts" />
+    <add key="github" value="https://nuget.pkg.github.com/YOUR_ORG/index.json" />
   </packageSources>
 </configuration>
 ```
-Or register a local folder temporarily:
+
+For local testing:
 ```bash
 dotnet nuget add source ./artifacts --name local
 ```
 
-### 5.6 Checking for Updates
-Check for outdated dependencies across your solution:
+### 5.6 Updating Packages
+Check for outdated packages:
 ```bash
 dotnet list package --outdated
 ```
 
-## 6. Contributing, Changelog and License
-
-- [AGENTS.md](AGENTS.md) — Architecture and layering rules
-- [CONTRIBUTING.md](CONTRIBUTING.md) — Contribution guidelines and branching
-- [CHANGELOG.md](CHANGELOG.md) — Version history and release notes
-- [SECURITY.md](SECURITY.md) — Security vulnerability reporting
-- [LICENSE](LICENSE) — MIT License
+## 6. Contributing, Changelog, and License
+- [AGENTS.md](AGENTS.md) - Architecture guidelines and contribution rules.
+- [CHANGELOG.md](CHANGELOG.md) - Release history and version updates.
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guide and branching conventions.
+- [LICENSE](LICENSE) - MIT License.

@@ -9,7 +9,13 @@
     <ProjectReference Include="..\SystemX.SharedKernel\SystemX.SharedKernel.csproj" />
     <ProjectReference Include="..\SystemX.Contracts\SystemX.Contracts.csproj" />
     <ProjectReference Include="..\SystemX.Application.Abstractions\SystemX.Application.Abstractions.csproj" />
-    <ProjectReference Include="..\SystemX.Contracts.Validation\SystemX.Contracts.Validation.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Options" />
   </ItemGroup>
 
   <ItemGroup>

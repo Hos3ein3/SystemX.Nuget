@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright (c) 2026 SystemX")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("CQRS, UnitOfWork, repository, and context interfaces for SystemX.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+495c1d307a97f7cd9076834aa1412322a295e5db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d497fedb8bcd7f33d2d944c08d4f3e844b237c80")]
 [assembly: System.Reflection.AssemblyProductAttribute("SystemX.Application.Abstractions")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SystemX.Application.Abstractions")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

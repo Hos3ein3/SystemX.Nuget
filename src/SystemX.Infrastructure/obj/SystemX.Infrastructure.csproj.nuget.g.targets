@@ -11,11 +11,13 @@
     <Import Project="$(NuGetPackageRoot)microsoft.sourcelink.common/10.0.303/buildTransitive/Microsoft.SourceLink.Common.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.sourcelink.common/10.0.303/buildTransitive/Microsoft.SourceLink.Common.targets')" />
     <Import Project="$(NuGetPackageRoot)microsoft.build.tasks.git/10.0.303/buildTransitive/Microsoft.Build.Tasks.Git.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.build.tasks.git/10.0.303/buildTransitive/Microsoft.Build.Tasks.Git.targets')" />
     <Import Project="$(NuGetPackageRoot)microsoft.sourcelink.github/10.0.303/build/Microsoft.SourceLink.GitHub.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.sourcelink.github/10.0.303/build/Microsoft.SourceLink.GitHub.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.extensions.options/8.0.2/buildTransitive/net6.0/Microsoft.Extensions.Options.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.options/8.0.2/buildTransitive/net6.0/Microsoft.Extensions.Options.targets')" />
   </ImportGroup>
   <ImportGroup Condition=" '$(TargetFramework)' == 'net8.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)minver/6.0.0/build/MinVer.targets" Condition="Exists('$(NuGetPackageRoot)minver/6.0.0/build/MinVer.targets')" />
     <Import Project="$(NuGetPackageRoot)microsoft.sourcelink.common/10.0.303/buildTransitive/Microsoft.SourceLink.Common.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.sourcelink.common/10.0.303/buildTransitive/Microsoft.SourceLink.Common.targets')" />
     <Import Project="$(NuGetPackageRoot)microsoft.build.tasks.git/10.0.303/buildTransitive/Microsoft.Build.Tasks.Git.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.build.tasks.git/10.0.303/buildTransitive/Microsoft.Build.Tasks.Git.targets')" />
     <Import Project="$(NuGetPackageRoot)microsoft.sourcelink.github/10.0.303/build/Microsoft.SourceLink.GitHub.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.sourcelink.github/10.0.303/build/Microsoft.SourceLink.GitHub.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.extensions.options/8.0.2/buildTransitive/net6.0/Microsoft.Extensions.Options.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.options/8.0.2/buildTransitive/net6.0/Microsoft.Extensions.Options.targets')" />
   </ImportGroup>
 </Project>

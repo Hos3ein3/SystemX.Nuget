@@ -4,7 +4,7 @@ namespace SystemX.SharedKernel.Results;
 /// <param name="Code">A stable code, for example "User.NotFound".</param>
 /// <param name="Description">A human readable description.</param>
 /// <param name="Type">The error category.</param>
-public sealed record Error(string Code, string Description, ErrorType Type = ErrorType.Failure)
+public record Error(string Code, string Description, ErrorType Type = ErrorType.Failure)
 {
     /// <summary>Represents "no error". Used by successful results.</summary>
     public static readonly Error None = new(string.Empty, string.Empty);
@@ -17,6 +17,9 @@ public sealed record Error(string Code, string Description, ErrorType Type = Err
 
     /// <summary>Creates a validation error.</summary>
     public static Error Validation(string code, string description) => new(code, description, ErrorType.Validation);
+
+    /// <summary>Creates a validation error from a collection of failures.</summary>
+    public static ValidationError Validation(IEnumerable<ValidationFailure> failures) => new(failures);
 
     /// <summary>Creates a not-found error.</summary>
     public static Error NotFound(string code, string description) => new(code, description, ErrorType.NotFound);

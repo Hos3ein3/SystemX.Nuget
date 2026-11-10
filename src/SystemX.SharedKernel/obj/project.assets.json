@@ -415,9 +415,6 @@
       },
       "warningProperties": {
         "allWarningsAsErrors": true,
-        "noWarn": [
-          "NU5105"
-        ],
         "warnAsError": [
           "NU1605"
         ]
@@ -450,6 +447,10 @@
         },
         "centralPackageVersions": {
           "coverlet.collector": "6.0.4",
+          "FluentValidation": "11.12.0",
+          "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Options": "8.0.2",
           "Microsoft.NET.Test.Sdk": "17.13.0",
           "Microsoft.SourceLink.GitHub": "10.0.303",
           "MinVer": "6.0.0",
@@ -787,6 +788,10 @@
         },
         "centralPackageVersions": {
           "coverlet.collector": "6.0.4",
+          "FluentValidation": "11.12.0",
+          "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Options": "8.0.2",
           "Microsoft.NET.Test.Sdk": "17.13.0",
           "Microsoft.SourceLink.GitHub": "10.0.303",
           "MinVer": "6.0.0",

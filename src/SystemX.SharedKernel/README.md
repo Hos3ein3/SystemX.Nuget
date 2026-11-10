@@ -1,6 +1,7 @@
 # SystemX.SharedKernel
 
-Domain and application primitives (Entities, AggregateRoots, ValueObjects, Domain Events, Business Rules, Auditing, Soft Delete, Multi-Tenancy, Result Pattern, Guards, and Clock abstractions) for building clean, domain-driven .NET applications.
+## Purpose
+Domain and application building blocks shared by all apps: Entity, AggregateRoot, ValueObject, Enumeration, domain events, business rules, Result and Error, Guard, IClock, strongly-typed IDs, specifications, pagination types, audit/soft-delete/tenant markers.
 
 Part of the SystemX library suite.
 
@@ -13,16 +14,15 @@ dotnet add package SystemX.SharedKernel
 ## Usage
 
 ```csharp
-using SystemX.SharedKernel.Domain;
+using System;
+using SystemX.SharedKernel.Identifiers;
 using SystemX.SharedKernel.Results;
 using SystemX.SharedKernel.Guards;
 
-// Inherit from Entity, AggregateRoot, or ValueObject
-public sealed class OrderId : ValueObject
+public sealed record OrderId(Guid Value) : GuidId(Value), IGuidIdFactory<OrderId>
 {
-    public OrderId(Guid value) => Value = Guard.NotDefault(value);
-    public Guid Value { get; }
-    protected override IEnumerable<object?> GetEqualityComponents() { yield return Value; }
+    public static OrderId Create(Guid value) => new(value);
+    public static OrderId New() => GuidIds.New<OrderId>();
 }
 ```
 
@@ -40,5 +40,9 @@ Comprehensive guides and compilable examples for each building block:
 - [SoftDelete](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/SoftDelete.md)
 - [MultiTenancy](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/MultiTenancy.md)
 - [ResultPattern](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/ResultPattern.md)
+- [ValidationResults](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/ValidationResults.md)
 - [Guard](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/Guard.md)
 - [Clock](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/Clock.md)
+- [StronglyTypedIds](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/StronglyTypedIds.md)
+- [Specifications](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/Specifications.md)
+- [Pagination](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/Pagination.md)

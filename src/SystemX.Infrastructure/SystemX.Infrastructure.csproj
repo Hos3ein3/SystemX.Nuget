@@ -24,6 +24,8 @@
     <ProjectReference Include="..\SystemX.Infrastructure.Persistence.SqlServer\SystemX.Infrastructure.Persistence.SqlServer.csproj" />
     <ProjectReference Include="..\SystemX.Infrastructure.RateLimiter\SystemX.Infrastructure.RateLimiter.csproj" />
     <ProjectReference Include="..\SystemX.Infrastructure.Resilience\SystemX.Infrastructure.Resilience.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Serialization\SystemX.Infrastructure.Serialization.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Validation\SystemX.Infrastructure.Validation.csproj" />
     <ProjectReference Include="..\SystemX.Infrastructure.Web\SystemX.Infrastructure.Web.csproj" />
   </ItemGroup>
 

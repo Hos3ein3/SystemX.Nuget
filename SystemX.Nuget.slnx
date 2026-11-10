@@ -1,0 +1,26 @@
+<Solution>
+  <Folder Name="/docs/" />
+  <Folder Name="/src/">
+    <Project Path="src/SystemX.Application.Abstractions/SystemX.Application.Abstractions.csproj" />
+    <Project Path="src/SystemX.Contracts/SystemX.Contracts.csproj" />
+    <Project Path="src/SystemX.Infrastructure.Caching/SystemX.Infrastructure.Caching.csproj" />
+    <Project Path="src/SystemX.Infrastructure.Cors/SystemX.Infrastructure.Cors.csproj" />
+    <Project Path="src/SystemX.Infrastructure.CQRS/SystemX.Infrastructure.CQRS.csproj" />
+    <Project Path="src/SystemX.Infrastructure.HealthChecks/SystemX.Infrastructure.HealthChecks.csproj" />
+    <Project Path="src/SystemX.Infrastructure.Localization/SystemX.Infrastructure.Localization.csproj" />
+    <Project Path="src/SystemX.Infrastructure.Logging/SystemX.Infrastructure.Logging.csproj" />
+    <Project Path="src/SystemX.Infrastructure.Messaging/SystemX.Infrastructure.Messaging.csproj" />
+    <Project Path="src/SystemX.Infrastructure.MultiTenancy/SystemX.Infrastructure.MultiTenancy.csproj" />
+    <Project Path="src/SystemX.Infrastructure.Observability/SystemX.Infrastructure.Observability.csproj" />
+    <Project Path="src/SystemX.Infrastructure.Persistence.EfCore/SystemX.Infrastructure.Persistence.EfCore.csproj" />
+    <Project Path="src/SystemX.Infrastructure.Persistence.Mongo/SystemX.Infrastructure.Persistence.Mongo.csproj" />
+    <Project Path="src/SystemX.Infrastructure.Persistence.Postgresql/SystemX.Infrastructure.Persistence.Postgresql.csproj" />
+    <Project Path="src/SystemX.Infrastructure.Persistence.SqlServer/SystemX.Infrastructure.Persistence.SqlServer.csproj" />
+    <Project Path="src/SystemX.Infrastructure.RateLimiter/SystemX.Infrastructure.RateLimiter.csproj" />
+    <Project Path="src/SystemX.Infrastructure.Resilience/SystemX.Infrastructure.Resilience.csproj" />
+    <Project Path="src/SystemX.Infrastructure.Web/SystemX.Infrastructure.Web.csproj" />
+    <Project Path="src/SystemX.Infrastructure/SystemX.Infrastructure.csproj" />
+    <Project Path="src/SystemX.SharedKernel/SystemX.SharedKernel.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+</Solution>

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright (c) 2026 SystemX")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Rate limiting and throttling policies for SystemX.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf7c8eedf8161f33ae151641d534418c00b16fb6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d41db4cdfb456391f41a023dc0525b8a7230b4d")]
 [assembly: System.Reflection.AssemblyProductAttribute("SystemX.Infrastructure.RateLimiter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SystemX.Infrastructure.RateLimiter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

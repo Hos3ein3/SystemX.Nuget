@@ -1,0 +1,119 @@
+name: Bump Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 'SemVer release bump level'
+        required: true
+        type: choice
+        default: 'patch'
+        options:
+          - patch
+          - minor
+          - major
+          - custom
+      custom_version:
+        description: 'Custom version (e.g. 1.2.0 or 1.0.0-preview.2) - required if bump is custom'
+        required: false
+        type: string
+        default: ''
+      prerelease:
+        description: 'Is this a prerelease?'
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Compute Next SemVer
+        id: semver
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BUMP="${{ github.event.inputs.bump }}"
+          CUSTOM_VERSION="${{ github.event.inputs.custom_version }}"
+          IS_PRERELEASE="${{ github.event.inputs.prerelease }}"
+
+          # Fetch latest v* tag
+          LATEST_TAG=$(git tag -l "v*" --sort=-v:refname | head -n 1 || true)
+          if [ -z "$LATEST_TAG" ]; then
+            LATEST_TAG="v0.0.0"
+          fi
+          echo "Latest tag found: $LATEST_TAG"
+
+          if [ "$BUMP" = "custom" ]; then
+            if [ -z "$CUSTOM_VERSION" ]; then
+              echo "Error: custom_version input must be specified when bump is custom." >&2
+              exit 1
+            fi
+            NEXT_VERSION="$CUSTOM_VERSION"
+          else
+            # Strip leading 'v'
+            VERSION_NUM="${LATEST_TAG#v}"
+            # Extract base X.Y.Z
+            BASE_VERSION=$(echo "$VERSION_NUM" | grep -oE '^[0-9]+\.[0-9]+\.[0-9]+' || echo "0.0.0")
+            IFS='.' read -r MAJOR MINOR PATCH <<< "$BASE_VERSION"
+
+            case "$BUMP" in
+              major)
+                MAJOR=$((MAJOR + 1))
+                MINOR=0
+                PATCH=0
+                ;;
+              minor)
+                MINOR=$((MINOR + 1))
+                PATCH=0
+                ;;
+              patch)
+                PATCH=$((PATCH + 1))
+                ;;
+            esac
+
+            if [ "$IS_PRERELEASE" = "true" ]; then
+              NEXT_VERSION="${MAJOR}.${MINOR}.${PATCH}-preview.1"
+            else
+              NEXT_VERSION="${MAJOR}.${MINOR}.${PATCH}"
+            fi
+          fi
+
+          # Validate SemVer with regex
+          SEMVER_REGEX="^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-([0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*))?(\+([0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*))?$"
+          if ! [[ "$NEXT_VERSION" =~ $SEMVER_REGEX ]]; then
+            echo "Error: '$NEXT_VERSION' is not a valid Semantic Version." >&2
+            exit 1
+          fi
+
+          TARGET_TAG="v${NEXT_VERSION}"
+          echo "Computed target tag: $TARGET_TAG"
+
+          if git rev-parse "$TARGET_TAG" >/dev/null 2>&1; then
+            echo "Error: Tag '$TARGET_TAG' already exists." >&2
+            exit 1
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -a "$TARGET_TAG" -m "Release $TARGET_TAG"
+          git push origin "$TARGET_TAG"
+
+          echo "tagged=true" >> "$GITHUB_OUTPUT"
+          echo "tag=$TARGET_TAG" >> "$GITHUB_OUTPUT"
+
+  # Note: Tags pushed with standard GITHUB_TOKEN do not trigger downstream tag-push workflows.
+  # Calling release workflow directly via workflow_call ensures publishing succeeds seamlessly.
+  call-release:
+    needs: tag
+    uses: ./.github/workflows/release.yml
+    secrets: inherit

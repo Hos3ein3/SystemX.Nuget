@@ -1,10 +1,34 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>net10.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+  <PropertyGroup>
+    <Description>SystemX Infrastructure meta-package bundling all infrastructure concerns.</Description>
+    <PackageTags>$(PackageTags);infrastructure;bundle;all</PackageTags>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SuppressDependenciesWhenPacking>false</SuppressDependenciesWhenPacking>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SystemX.Infrastructure.Caching\SystemX.Infrastructure.Caching.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Cors\SystemX.Infrastructure.Cors.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Cqrs\SystemX.Infrastructure.Cqrs.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.HealthChecks\SystemX.Infrastructure.HealthChecks.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Localization\SystemX.Infrastructure.Localization.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Logging\SystemX.Infrastructure.Logging.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Messaging\SystemX.Infrastructure.Messaging.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.MultiTenancy\SystemX.Infrastructure.MultiTenancy.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Observability\SystemX.Infrastructure.Observability.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Persistence.EfCore\SystemX.Infrastructure.Persistence.EfCore.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Persistence.Mongo\SystemX.Infrastructure.Persistence.Mongo.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Persistence.Postgresql\SystemX.Infrastructure.Persistence.Postgresql.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Persistence.SqlServer\SystemX.Infrastructure.Persistence.SqlServer.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.RateLimiter\SystemX.Infrastructure.RateLimiter.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Resilience\SystemX.Infrastructure.Resilience.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Web\SystemX.Infrastructure.Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="$(AssemblyName).Tests" />
+  </ItemGroup>
 
 </Project>

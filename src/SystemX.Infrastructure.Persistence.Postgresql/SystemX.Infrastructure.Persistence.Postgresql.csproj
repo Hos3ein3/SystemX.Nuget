@@ -1,10 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>net10.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+  <PropertyGroup>
+    <Description>Entity Framework Core PostgreSQL persistence provider for SystemX.</Description>
+    <PackageTags>$(PackageTags);persistence;postgresql;npgsql;efcore</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SystemX.SharedKernel\SystemX.SharedKernel.csproj" />
+    <ProjectReference Include="..\SystemX.Contracts\SystemX.Contracts.csproj" />
+    <ProjectReference Include="..\SystemX.Application.Abstractions\SystemX.Application.Abstractions.csproj" />
+    <ProjectReference Include="..\SystemX.Infrastructure.Persistence.EfCore\SystemX.Infrastructure.Persistence.EfCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="$(AssemblyName).Tests" />
+  </ItemGroup>
 
 </Project>

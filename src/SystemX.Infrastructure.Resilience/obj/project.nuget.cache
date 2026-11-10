@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "0RHTOVhunqw=",
+  "dgSpecHash": "w21/D4CBbGs=",
   "success": true,
   "projectFilePath": "/Users/mohammadhosein/Development/SystemX/nuget/src/SystemX.Infrastructure.Resilience/SystemX.Infrastructure.Resilience.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/mohammadhosein/.nuget/packages/microsoft.build.tasks.git/10.0.303/microsoft.build.tasks.git.10.0.303.nupkg.sha512",
+    "/Users/mohammadhosein/.nuget/packages/microsoft.sourcelink.common/10.0.303/microsoft.sourcelink.common.10.0.303.nupkg.sha512",
+    "/Users/mohammadhosein/.nuget/packages/microsoft.sourcelink.github/10.0.303/microsoft.sourcelink.github.10.0.303.nupkg.sha512",
+    "/Users/mohammadhosein/.nuget/packages/minver/6.0.0/minver.6.0.0.nupkg.sha512",
+    "/Users/mohammadhosein/.nuget/packages/system.io.hashing/10.0.11/system.io.hashing.10.0.11.nupkg.sha512",
+    "/Users/mohammadhosein/.nuget/packages/microsoft.netcore.app.ref/8.0.25/microsoft.netcore.app.ref.8.0.25.nupkg.sha512",
+    "/Users/mohammadhosein/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.25/microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512"
+  ],
   "logs": []
 }

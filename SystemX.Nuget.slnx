@@ -1,11 +1,15 @@
 <Solution>
+  <Folder Name="/agents.rules/">
+    <File Path="..\..\..\Downloads\AGENTS.md" />
+  </Folder>
   <Folder Name="/docs/" />
   <Folder Name="/src/">
     <Project Path="src/SystemX.Application.Abstractions/SystemX.Application.Abstractions.csproj" />
     <Project Path="src/SystemX.Contracts/SystemX.Contracts.csproj" />
+    <Project Path="src/SystemX.Infrastructure/SystemX.Infrastructure.csproj" />
     <Project Path="src/SystemX.Infrastructure.Caching/SystemX.Infrastructure.Caching.csproj" />
     <Project Path="src/SystemX.Infrastructure.Cors/SystemX.Infrastructure.Cors.csproj" />
-    <Project Path="src/SystemX.Infrastructure.CQRS/SystemX.Infrastructure.CQRS.csproj" />
+    <Project Path="src/SystemX.Infrastructure.Cqrs/SystemX.Infrastructure.Cqrs.csproj" />
     <Project Path="src/SystemX.Infrastructure.HealthChecks/SystemX.Infrastructure.HealthChecks.csproj" />
     <Project Path="src/SystemX.Infrastructure.Localization/SystemX.Infrastructure.Localization.csproj" />
     <Project Path="src/SystemX.Infrastructure.Logging/SystemX.Infrastructure.Logging.csproj" />
@@ -19,8 +23,29 @@
     <Project Path="src/SystemX.Infrastructure.RateLimiter/SystemX.Infrastructure.RateLimiter.csproj" />
     <Project Path="src/SystemX.Infrastructure.Resilience/SystemX.Infrastructure.Resilience.csproj" />
     <Project Path="src/SystemX.Infrastructure.Web/SystemX.Infrastructure.Web.csproj" />
-    <Project Path="src/SystemX.Infrastructure/SystemX.Infrastructure.csproj" />
     <Project Path="src/SystemX.SharedKernel/SystemX.SharedKernel.csproj" />
   </Folder>
-  <Folder Name="/tests/" />
+  <Folder Name="/tests/">
+    <Project Path="tests/SystemX.Application.Abstractions.Tests/SystemX.Application.Abstractions.Tests.csproj" />
+    <Project Path="tests/SystemX.ArchitectureTests/SystemX.ArchitectureTests.csproj" />
+    <Project Path="tests/SystemX.Contracts.Tests/SystemX.Contracts.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Caching.Tests/SystemX.Infrastructure.Caching.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Cors.Tests/SystemX.Infrastructure.Cors.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Cqrs.Tests/SystemX.Infrastructure.Cqrs.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.HealthChecks.Tests/SystemX.Infrastructure.HealthChecks.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Localization.Tests/SystemX.Infrastructure.Localization.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Logging.Tests/SystemX.Infrastructure.Logging.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Messaging.Tests/SystemX.Infrastructure.Messaging.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.MultiTenancy.Tests/SystemX.Infrastructure.MultiTenancy.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Observability.Tests/SystemX.Infrastructure.Observability.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Persistence.EfCore.Tests/SystemX.Infrastructure.Persistence.EfCore.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Persistence.Mongo.Tests/SystemX.Infrastructure.Persistence.Mongo.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Persistence.Postgresql.Tests/SystemX.Infrastructure.Persistence.Postgresql.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Persistence.SqlServer.Tests/SystemX.Infrastructure.Persistence.SqlServer.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.RateLimiter.Tests/SystemX.Infrastructure.RateLimiter.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Resilience.Tests/SystemX.Infrastructure.Resilience.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Tests/SystemX.Infrastructure.Tests.csproj" />
+    <Project Path="tests/SystemX.Infrastructure.Web.Tests/SystemX.Infrastructure.Web.Tests.csproj" />
+    <Project Path="tests/SystemX.SharedKernel.Tests/SystemX.SharedKernel.Tests.csproj" />
+  </Folder>
 </Solution>

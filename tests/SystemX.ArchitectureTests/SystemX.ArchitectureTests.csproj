@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="coverlet.collector" />
+    <PackageReference Include="NetArchTest.Rules" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SystemX.Application.Abstractions\SystemX.Application.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Contracts\SystemX.Contracts.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure\SystemX.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.Caching\SystemX.Infrastructure.Caching.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.Cors\SystemX.Infrastructure.Cors.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.Cqrs\SystemX.Infrastructure.Cqrs.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.HealthChecks\SystemX.Infrastructure.HealthChecks.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.Localization\SystemX.Infrastructure.Localization.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.Logging\SystemX.Infrastructure.Logging.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.Messaging\SystemX.Infrastructure.Messaging.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.MultiTenancy\SystemX.Infrastructure.MultiTenancy.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.Observability\SystemX.Infrastructure.Observability.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.Persistence.EfCore\SystemX.Infrastructure.Persistence.EfCore.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.Persistence.Mongo\SystemX.Infrastructure.Persistence.Mongo.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.Persistence.Postgresql\SystemX.Infrastructure.Persistence.Postgresql.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.Persistence.SqlServer\SystemX.Infrastructure.Persistence.SqlServer.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.RateLimiter\SystemX.Infrastructure.RateLimiter.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.Resilience\SystemX.Infrastructure.Resilience.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.Web\SystemX.Infrastructure.Web.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.SharedKernel\SystemX.SharedKernel.csproj" />
+  </ItemGroup>
+
+</Project>

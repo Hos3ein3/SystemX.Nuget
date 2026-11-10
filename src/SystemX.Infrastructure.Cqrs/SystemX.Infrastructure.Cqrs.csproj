@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>CQRS pipeline and dispatcher infrastructure for SystemX.</Description>
+    <PackageTags>$(PackageTags);cqrs;mediator;command;query</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SystemX.SharedKernel\SystemX.SharedKernel.csproj" />
+    <ProjectReference Include="..\SystemX.Contracts\SystemX.Contracts.csproj" />
+    <ProjectReference Include="..\SystemX.Application.Abstractions\SystemX.Application.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="$(AssemblyName).Tests" />
+  </ItemGroup>
+
+</Project>

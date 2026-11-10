@@ -8,8 +8,13 @@ public class DomainException : Exception
     {
     }
 
-    /// <summary>Creates the exception with a message and inner exception.</summary>
-    public DomainException(string message, Exception innerException) : base(message, innerException)
+    /// <summary>Creates the exception with a message and optional inner exception.</summary>
+    public DomainException(string message, Exception? innerException) : base(message, innerException)
+    {
+    }
+
+    /// <summary>Creates a default domain exception.</summary>
+    public DomainException() : base()
     {
     }
 }

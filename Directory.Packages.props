@@ -9,10 +9,6 @@
     <PackageVersion Include="MinVer" Version="6.0.0" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.303" />
 
-    <!-- Dependency Injection & Options -->
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
-    <PackageVersion Include="Microsoft.Extensions.Options" Version="8.0.2" />
-
     <!-- Validation -->
     <PackageVersion Include="FluentValidation" Version="11.12.0" />
     <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="11.12.0" />
@@ -23,5 +19,21 @@
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.2" />
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
     <PackageVersion Include="NetArchTest.Rules" Version="1.3.2" />
+  </ItemGroup>
+
+  <!-- net8.0 package versions -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="8.0.2" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.11" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.11" />
+  </ItemGroup>
+
+  <!-- net10.0 package versions -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.0" />
   </ItemGroup>
 </Project>

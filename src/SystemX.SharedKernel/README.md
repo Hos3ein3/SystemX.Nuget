@@ -1,7 +1,7 @@
 # SystemX.SharedKernel
 
 ## Purpose
-Domain and application building blocks shared by all apps: Entity, AggregateRoot, ValueObject, Enumeration, domain events, business rules, Result and Error, Guard, IClock, strongly-typed IDs, specifications, pagination types, audit/soft-delete/tenant markers.
+Domain and application building blocks shared by all apps: Entity, AggregateRoot, ValueObject, Enumeration, domain events, business rules, Result and Error, Guard, IClock, strongly-typed IDs, specifications, pagination types, multi-tenancy model/info types, concurrency markers, entity markers, translations, audit/soft-delete markers.
 
 Part of the SystemX library suite.
 
@@ -39,6 +39,11 @@ Comprehensive guides and compilable examples for each building block:
 - [Auditing](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/Auditing.md)
 - [SoftDelete](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/SoftDelete.md)
 - [MultiTenancy](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/MultiTenancy.md)
+- [MultiTenancyModels](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/MultiTenancyModels.md)
+- [TenantMarkers](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/TenantMarkers.md)
+- [Concurrency](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/Concurrency.md)
+- [EntityMarkers](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/EntityMarkers.md)
+- [Translations](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/Translations.md)
 - [ResultPattern](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/ResultPattern.md)
 - [ValidationResults](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/ValidationResults.md)
 - [Guard](file:///Users/mohammadhosein/Development/SystemX/nuget/docs/SystemX.SharedKernel/Guard.md)

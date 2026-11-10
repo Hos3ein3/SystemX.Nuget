@@ -1,10 +1,11 @@
 using SystemX.SharedKernel.Domain;
+using SystemX.SharedKernel.Markers;
 
 namespace SystemX.SharedKernel.Auditing;
 
 /// <summary>Aggregate root with audit fields.</summary>
 /// <typeparam name="TId">The identifier type.</typeparam>
-public abstract class AuditableAggregateRoot<TId> : AggregateRoot<TId>, IAuditable
+public abstract class AuditableAggregateRoot<TId> : AggregateRoot<TId>, IAuditable, IHasCreationTime, IHasModificationTime
     where TId : notnull
 {
     /// <summary>Creates an aggregate root with an id.</summary>
@@ -41,5 +42,17 @@ public abstract class AuditableAggregateRoot<TId> : AggregateRoot<TId>, IAuditab
     {
         ModifiedAt = at;
         ModifiedBy = by;
+    }
+
+    /// <inheritdoc />
+    public void SetCreationTime(DateTimeOffset createdAt)
+    {
+        CreatedAt = createdAt;
+    }
+
+    /// <inheritdoc />
+    public void SetModificationTime(DateTimeOffset modifiedAt)
+    {
+        ModifiedAt = modifiedAt;
     }
 }

@@ -39,6 +39,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -73,6 +76,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -414,8 +419,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",

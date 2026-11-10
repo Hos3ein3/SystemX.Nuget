@@ -4,7 +4,7 @@
 **Namespace:** `SystemX.SharedKernel.MultiTenancy`
 
 ## What it is
-`ITenantScoped` defines a contract for entities and models that are scoped to a single tenant in multi-tenant architectures.
+`ITenantScoped` defines a contract for entities and models that are scoped to a single tenant in multi-tenant architectures using strongly-typed `TenantId`.
 
 ## When to use it
 - Use it on all domain entities in systems requiring logical tenant data isolation.
@@ -23,7 +23,7 @@ using System;
 using SystemX.SharedKernel.Domain;
 using SystemX.SharedKernel.MultiTenancy;
 
-namespace Example;
+namespace Example.MultiTenancyLegacyDoc;
 
 public sealed class TenantInvoice : Entity<Guid>, ITenantScoped
 {
@@ -35,9 +35,9 @@ public sealed class TenantInvoice : Entity<Guid>, ITenantScoped
     private TenantInvoice() : base() { }
 
     public decimal Amount { get; private set; }
-    public string TenantId { get; private set; } = string.Empty;
+    public TenantId TenantId { get; private set; } = TenantId.Create("default");
 
-    public void AssignTenant(string tenantId)
+    public void AssignTenant(TenantId tenantId)
     {
         TenantId = tenantId;
     }
@@ -48,5 +48,6 @@ public sealed class TenantInvoice : Entity<Guid>, ITenantScoped
 Integrated with `SystemX.Infrastructure.MultiTenancy` to resolve the active tenant ID from HTTP requests or message headers.
 
 ## Related
+- [MultiTenancyModels.md](MultiTenancyModels.md)
+- [TenantMarkers.md](TenantMarkers.md)
 - [Entity.md](Entity.md)
-- [Auditing.md](Auditing.md)

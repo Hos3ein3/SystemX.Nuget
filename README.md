@@ -81,6 +81,11 @@ Links to detailed feature documentation and complete, compilable examples:
 - [Auditing](docs/SystemX.SharedKernel/Auditing.md)
 - [SoftDelete](docs/SystemX.SharedKernel/SoftDelete.md)
 - [MultiTenancy](docs/SystemX.SharedKernel/MultiTenancy.md)
+- [MultiTenancyModels](docs/SystemX.SharedKernel/MultiTenancyModels.md)
+- [TenantMarkers](docs/SystemX.SharedKernel/TenantMarkers.md)
+- [Concurrency](docs/SystemX.SharedKernel/Concurrency.md)
+- [EntityMarkers](docs/SystemX.SharedKernel/EntityMarkers.md)
+- [Translations](docs/SystemX.SharedKernel/Translations.md)
 - [ResultPattern](docs/SystemX.SharedKernel/ResultPattern.md)
 - [ValidationResults](docs/SystemX.SharedKernel/ValidationResults.md)
 - [Guard](docs/SystemX.SharedKernel/Guard.md)
@@ -92,6 +97,9 @@ Links to detailed feature documentation and complete, compilable examples:
 ### SystemX.Contracts
 - [Pagination](docs/SystemX.Contracts/Pagination.md)
 
+### SystemX.Application.Abstractions
+- [TenantAbstractions](docs/SystemX.Application.Abstractions/TenantAbstractions.md)
+
 ### SystemX.Contracts.Validation
 - [ContractValidators](docs/SystemX.Contracts.Validation/ContractValidators.md)
 
@@ -101,6 +109,14 @@ Links to detailed feature documentation and complete, compilable examples:
 
 ### SystemX.Infrastructure.Serialization
 - [StronglyTypedIdJson](docs/SystemX.Infrastructure.Serialization/StronglyTypedIdJson.md)
+
+### SystemX.Infrastructure.MultiTenancy
+- [TenantResolution](docs/SystemX.Infrastructure.MultiTenancy/TenantResolution.md)
+- [TenantStores](docs/SystemX.Infrastructure.MultiTenancy/TenantStores.md)
+- [MultiTenancySetup](docs/SystemX.Infrastructure.MultiTenancy/MultiTenancySetup.md)
+
+### SystemX.Infrastructure.Persistence.EfCore
+- [TenancyAndConcurrency](docs/SystemX.Infrastructure.Persistence.EfCore/TenancyAndConcurrency.md)
 
 ## 4. How to publish packages to NuGet
 

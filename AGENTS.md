@@ -33,13 +33,13 @@ Every project has ONE purpose. If new code does not fit the purpose of a project
 | `SystemX.Infrastructure.Cors` | CORS policy setup with options. |
 | `SystemX.Infrastructure.RateLimiter` | Rate-limiting policies (ASP.NET Core rate limiting) with options. |
 | `SystemX.Infrastructure.Localization` | Culture resolution, resource-based localization, `ICurrentCulture` implementation. |
-| `SystemX.Infrastructure.MultiTenancy` | Tenant resolution (header, claim, host), `ITenantContext` implementation, tenant query filters. |
+| `SystemX.Infrastructure.MultiTenancy` | Tenant resolution strategies (header, claim, host, route, query), tenant store implementations (in-memory, configuration, cached), `ITenantContextAccessor` implementation, ASP.NET Core multi-tenancy middleware. |
 
 ### 1.4 Data
 
 | Project | Purpose |
 |---|---|
-| `SystemX.Infrastructure.Persistence.EfCore` | Provider-neutral EF Core base: `UnitOfWork`, generic repositories, specification evaluator, interceptors (audit, soft delete, tenant, domain-event dispatch), strongly-typed ID value converters. |
+| `SystemX.Infrastructure.Persistence.EfCore` | Provider-neutral EF Core base: multi-tenancy models (Row, Schema, Database), concurrency handling, entity markers, `UnitOfWork`, generic repositories, specification evaluator, interceptors (audit, soft delete, tenant, domain-event dispatch), strongly-typed ID value converters. |
 | `SystemX.Infrastructure.Persistence.SqlServer` | SQL Server provider setup on top of `EfCore` (connection, options, SQL Server specifics only). |
 | `SystemX.Infrastructure.Persistence.Postgresql` | PostgreSQL provider setup on top of `EfCore` (Npgsql, PostgreSQL specifics only). |
 | `SystemX.Infrastructure.Persistence.Mongo` | MongoDB repositories, serializers and conventions. Independent from EF Core. |

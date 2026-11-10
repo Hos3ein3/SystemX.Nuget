@@ -47,6 +47,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -81,6 +84,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -422,8 +427,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -760,6 +767,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -794,6 +804,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -1135,8 +1147,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -1493,6 +1507,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -1527,6 +1544,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -1868,8 +1887,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -2226,6 +2247,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -2260,6 +2284,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -2601,8 +2627,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -2959,6 +2987,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -2993,6 +3024,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -3334,8 +3367,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -3692,6 +3727,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -3726,6 +3764,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -4067,8 +4107,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -4425,6 +4467,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -4459,6 +4504,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -4800,8 +4847,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -5158,6 +5207,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -5192,6 +5244,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -5533,8 +5587,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -5891,6 +5947,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -5925,6 +5984,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -6266,8 +6327,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -6624,6 +6687,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -6658,6 +6724,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -6689,13 +6757,150 @@
             }
           ],
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
+            "Microsoft.AspNetCore": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Antiforgery": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Authentication": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Authentication.Abstractions": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Authentication.BearerToken": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Authentication.Cookies": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Authentication.Core": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Authentication.OAuth": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Authorization": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Authorization.Policy": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Components": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Components.Authorization": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Components.Endpoints": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Components.Forms": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Components.Server": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Components.Web": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Connections.Abstractions": "(,8.0.32767]",
+            "Microsoft.AspNetCore.CookiePolicy": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Cors": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Cryptography.Internal": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Cryptography.KeyDerivation": "(,8.0.32767]",
+            "Microsoft.AspNetCore.DataProtection": "(,8.0.32767]",
+            "Microsoft.AspNetCore.DataProtection.Abstractions": "(,8.0.32767]",
+            "Microsoft.AspNetCore.DataProtection.Extensions": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Diagnostics": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Diagnostics.Abstractions": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Diagnostics.HealthChecks": "(,8.0.32767]",
+            "Microsoft.AspNetCore.HostFiltering": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Hosting": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Hosting.Abstractions": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Hosting.Server.Abstractions": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Html.Abstractions": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Http": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Http.Abstractions": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Http.Connections": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Http.Connections.Common": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Http.Extensions": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Http.Features": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Http.Results": "(,8.0.32767]",
+            "Microsoft.AspNetCore.HttpLogging": "(,8.0.32767]",
+            "Microsoft.AspNetCore.HttpOverrides": "(,8.0.32767]",
+            "Microsoft.AspNetCore.HttpsPolicy": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Identity": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Localization": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Localization.Routing": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Metadata": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Mvc": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Mvc.Abstractions": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Mvc.ApiExplorer": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Mvc.Core": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Mvc.Cors": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Mvc.DataAnnotations": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Mvc.Formatters.Json": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Mvc.Formatters.Xml": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Mvc.Localization": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Mvc.Razor": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Mvc.RazorPages": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Mvc.TagHelpers": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": "(,8.0.32767]",
+            "Microsoft.AspNetCore.OutputCaching": "(,8.0.32767]",
+            "Microsoft.AspNetCore.RateLimiting": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Razor": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Razor.Runtime": "(,8.0.32767]",
+            "Microsoft.AspNetCore.RequestDecompression": "(,8.0.32767]",
+            "Microsoft.AspNetCore.ResponseCaching": "(,8.0.32767]",
+            "Microsoft.AspNetCore.ResponseCaching.Abstractions": "(,8.0.32767]",
+            "Microsoft.AspNetCore.ResponseCompression": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Rewrite": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Routing": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Routing.Abstractions": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Server.HttpSys": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Server.IIS": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Server.IISIntegration": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Server.Kestrel": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Server.Kestrel.Core": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Server.Kestrel.Transport.Quic": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets": "(,8.0.32767]",
+            "Microsoft.AspNetCore.Session": "(,8.0.32767]",
+            "Microsoft.AspNetCore.SignalR": "(,8.0.32767]",
+            "Microsoft.AspNetCore.SignalR.Common": "(,8.0.32767]",
+            "Microsoft.AspNetCore.SignalR.Core": "(,8.0.32767]",
+            "Microsoft.AspNetCore.SignalR.Protocols.Json": "(,8.0.32767]",
+            "Microsoft.AspNetCore.StaticFiles": "(,8.0.32767]",
+            "Microsoft.AspNetCore.WebSockets": "(,8.0.32767]",
+            "Microsoft.AspNetCore.WebUtilities": "(,8.0.32767]",
             "Microsoft.CSharp": "(,4.7.32767]",
+            "Microsoft.Extensions.Caching.Abstractions": "(,8.0.32767]",
+            "Microsoft.Extensions.Caching.Memory": "(,8.0.32767]",
+            "Microsoft.Extensions.Configuration": "(,8.0.32767]",
+            "Microsoft.Extensions.Configuration.Abstractions": "(,8.0.32767]",
+            "Microsoft.Extensions.Configuration.Binder": "(,8.0.32767]",
+            "Microsoft.Extensions.Configuration.CommandLine": "(,8.0.32767]",
+            "Microsoft.Extensions.Configuration.EnvironmentVariables": "(,8.0.32767]",
+            "Microsoft.Extensions.Configuration.FileExtensions": "(,8.0.32767]",
+            "Microsoft.Extensions.Configuration.Ini": "(,8.0.32767]",
+            "Microsoft.Extensions.Configuration.Json": "(,8.0.32767]",
+            "Microsoft.Extensions.Configuration.KeyPerFile": "(,8.0.32767]",
+            "Microsoft.Extensions.Configuration.UserSecrets": "(,8.0.32767]",
+            "Microsoft.Extensions.Configuration.Xml": "(,8.0.32767]",
+            "Microsoft.Extensions.DependencyInjection": "(,8.0.32767]",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "(,8.0.32767]",
+            "Microsoft.Extensions.Diagnostics": "(,8.0.32767]",
+            "Microsoft.Extensions.Diagnostics.Abstractions": "(,8.0.32767]",
+            "Microsoft.Extensions.Diagnostics.HealthChecks": "(,8.0.32767]",
+            "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "(,8.0.32767]",
+            "Microsoft.Extensions.Features": "(,8.0.32767]",
+            "Microsoft.Extensions.FileProviders.Abstractions": "(,8.0.32767]",
+            "Microsoft.Extensions.FileProviders.Composite": "(,8.0.32767]",
+            "Microsoft.Extensions.FileProviders.Embedded": "(,8.0.32767]",
+            "Microsoft.Extensions.FileProviders.Physical": "(,8.0.32767]",
+            "Microsoft.Extensions.FileSystemGlobbing": "(,8.0.32767]",
+            "Microsoft.Extensions.Hosting": "(,8.0.32767]",
+            "Microsoft.Extensions.Hosting.Abstractions": "(,8.0.32767]",
+            "Microsoft.Extensions.Http": "(,8.0.32767]",
+            "Microsoft.Extensions.Identity.Core": "(,8.0.32767]",
+            "Microsoft.Extensions.Identity.Stores": "(,8.0.32767]",
+            "Microsoft.Extensions.Localization": "(,8.0.32767]",
+            "Microsoft.Extensions.Localization.Abstractions": "(,8.0.32767]",
+            "Microsoft.Extensions.Logging": "(,8.0.32767]",
+            "Microsoft.Extensions.Logging.Abstractions": "(,8.0.32767]",
+            "Microsoft.Extensions.Logging.Configuration": "(,8.0.32767]",
+            "Microsoft.Extensions.Logging.Console": "(,8.0.32767]",
+            "Microsoft.Extensions.Logging.Debug": "(,8.0.32767]",
+            "Microsoft.Extensions.Logging.EventLog": "(,8.0.32767]",
+            "Microsoft.Extensions.Logging.EventSource": "(,8.0.32767]",
+            "Microsoft.Extensions.Logging.TraceSource": "(,8.0.32767]",
+            "Microsoft.Extensions.ObjectPool": "(,8.0.32767]",
+            "Microsoft.Extensions.Options": "(,8.0.32767]",
+            "Microsoft.Extensions.Options.ConfigurationExtensions": "(,8.0.32767]",
+            "Microsoft.Extensions.Options.DataAnnotations": "(,8.0.32767]",
+            "Microsoft.Extensions.Primitives": "(,8.0.32767]",
+            "Microsoft.Extensions.WebEncoders": "(,8.0.32767]",
+            "Microsoft.JSInterop": "(,8.0.32767]",
+            "Microsoft.Net.Http.Headers": "(,8.0.32767]",
             "Microsoft.VisualBasic": "(,10.3.32767]",
             "Microsoft.Win32.Primitives": "(,4.3.32767]",
             "Microsoft.Win32.Registry": "(,5.0.32767]",
@@ -6868,6 +7073,7 @@
             "System.Diagnostics.Contracts": "(,4.3.32767]",
             "System.Diagnostics.Debug": "(,4.3.32767]",
             "System.Diagnostics.DiagnosticSource": "(,8.0.32767]",
+            "System.Diagnostics.EventLog": "(,8.0.32767]",
             "System.Diagnostics.FileVersionInfo": "(,4.3.32767]",
             "System.Diagnostics.Process": "(,4.3.32767]",
             "System.Diagnostics.StackTrace": "(,4.3.32767]",
@@ -6891,6 +7097,7 @@
             "System.IO.FileSystem.Watcher": "(,4.3.32767]",
             "System.IO.IsolatedStorage": "(,4.3.32767]",
             "System.IO.MemoryMappedFiles": "(,4.3.32767]",
+            "System.IO.Pipelines": "(,8.0.32767]",
             "System.IO.Pipes": "(,4.3.32767]",
             "System.IO.Pipes.AccessControl": "(,4.6.32767]",
             "System.IO.UnmanagedMemoryStream": "(,4.3.32767]",
@@ -6949,6 +7156,7 @@
             "System.Security.Cryptography.OpenSsl": "(,5.0.32767]",
             "System.Security.Cryptography.Primitives": "(,4.3.32767]",
             "System.Security.Cryptography.X509Certificates": "(,4.3.32767]",
+            "System.Security.Cryptography.Xml": "(,8.0.32767]",
             "System.Security.Principal": "(,4.3.32767]",
             "System.Security.Principal.Windows": "(,5.0.32767]",
             "System.Security.SecureString": "(,4.3.32767]",
@@ -6961,6 +7169,7 @@
             "System.Threading": "(,4.3.32767]",
             "System.Threading.Channels": "(,8.0.32767]",
             "System.Threading.Overlapped": "(,4.3.32767]",
+            "System.Threading.RateLimiting": "(,8.0.32767]",
             "System.Threading.Tasks": "(,4.3.32767]",
             "System.Threading.Tasks.Dataflow": "(,8.0.32767]",
             "System.Threading.Tasks.Extensions": "(,4.6.32767]",
@@ -6999,8 +7208,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -7020,13 +7231,152 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
+            "Microsoft.AspNetCore": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
+            "Microsoft.AspNetCore.App": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Authentication": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Authentication.Abstractions": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Authentication.BearerToken": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Authentication.Cookies": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Authentication.Core": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Authentication.OAuth": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Authorization": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Authorization.Policy": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Components": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Components.Authorization": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Components.Endpoints": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Components.Forms": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Components.Server": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Components.Web": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Connections.Abstractions": "(,10.0.32767]",
+            "Microsoft.AspNetCore.CookiePolicy": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Cors": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Cryptography.Internal": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Cryptography.KeyDerivation": "(,10.0.32767]",
+            "Microsoft.AspNetCore.DataProtection": "(,10.0.32767]",
+            "Microsoft.AspNetCore.DataProtection.Abstractions": "(,10.0.32767]",
+            "Microsoft.AspNetCore.DataProtection.Extensions": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Diagnostics": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Diagnostics.Abstractions": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Diagnostics.HealthChecks": "(,10.0.32767]",
+            "Microsoft.AspNetCore.HostFiltering": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Hosting": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Hosting.Abstractions": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Hosting.Server.Abstractions": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Html.Abstractions": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Http": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Http.Abstractions": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Http.Connections": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Http.Connections.Common": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Http.Extensions": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Http.Features": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Http.Results": "(,10.0.32767]",
+            "Microsoft.AspNetCore.HttpLogging": "(,10.0.32767]",
+            "Microsoft.AspNetCore.HttpOverrides": "(,10.0.32767]",
+            "Microsoft.AspNetCore.HttpsPolicy": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Identity": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Localization": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Localization.Routing": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Metadata": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Mvc": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Mvc.Abstractions": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Mvc.ApiExplorer": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Mvc.Core": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Mvc.Cors": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Mvc.DataAnnotations": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Mvc.Formatters.Json": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Mvc.Formatters.Xml": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Mvc.Localization": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Mvc.Razor": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Mvc.RazorPages": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Mvc.TagHelpers": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": "(,10.0.32767]",
+            "Microsoft.AspNetCore.OutputCaching": "(,10.0.32767]",
+            "Microsoft.AspNetCore.RateLimiting": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Razor": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Razor.Runtime": "(,10.0.32767]",
+            "Microsoft.AspNetCore.RequestDecompression": "(,10.0.32767]",
+            "Microsoft.AspNetCore.ResponseCaching": "(,10.0.32767]",
+            "Microsoft.AspNetCore.ResponseCaching.Abstractions": "(,10.0.32767]",
+            "Microsoft.AspNetCore.ResponseCompression": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Rewrite": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Routing": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Routing.Abstractions": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Server.HttpSys": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Server.IIS": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Server.IISIntegration": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Server.Kestrel": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Server.Kestrel.Core": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Server.Kestrel.Transport.Quic": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets": "(,10.0.32767]",
+            "Microsoft.AspNetCore.Session": "(,10.0.32767]",
+            "Microsoft.AspNetCore.SignalR": "(,10.0.32767]",
+            "Microsoft.AspNetCore.SignalR.Common": "(,10.0.32767]",
+            "Microsoft.AspNetCore.SignalR.Core": "(,10.0.32767]",
+            "Microsoft.AspNetCore.SignalR.Protocols.Json": "(,10.0.32767]",
+            "Microsoft.AspNetCore.StaticAssets": "(,10.0.32767]",
+            "Microsoft.AspNetCore.StaticFiles": "(,10.0.32767]",
+            "Microsoft.AspNetCore.WebSockets": "(,10.0.32767]",
+            "Microsoft.AspNetCore.WebUtilities": "(,10.0.32767]",
             "Microsoft.CSharp": "(,4.7.32767]",
+            "Microsoft.Extensions.Caching.Abstractions": "(,10.0.32767]",
+            "Microsoft.Extensions.Caching.Memory": "(,10.0.32767]",
+            "Microsoft.Extensions.Configuration": "(,10.0.32767]",
+            "Microsoft.Extensions.Configuration.Abstractions": "(,10.0.32767]",
+            "Microsoft.Extensions.Configuration.Binder": "(,10.0.32767]",
+            "Microsoft.Extensions.Configuration.CommandLine": "(,10.0.32767]",
+            "Microsoft.Extensions.Configuration.EnvironmentVariables": "(,10.0.32767]",
+            "Microsoft.Extensions.Configuration.FileExtensions": "(,10.0.32767]",
+            "Microsoft.Extensions.Configuration.Ini": "(,10.0.32767]",
+            "Microsoft.Extensions.Configuration.Json": "(,10.0.32767]",
+            "Microsoft.Extensions.Configuration.KeyPerFile": "(,10.0.32767]",
+            "Microsoft.Extensions.Configuration.UserSecrets": "(,10.0.32767]",
+            "Microsoft.Extensions.Configuration.Xml": "(,10.0.32767]",
+            "Microsoft.Extensions.DependencyInjection": "(,10.0.32767]",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "(,10.0.32767]",
+            "Microsoft.Extensions.Diagnostics": "(,10.0.32767]",
+            "Microsoft.Extensions.Diagnostics.Abstractions": "(,10.0.32767]",
+            "Microsoft.Extensions.Diagnostics.HealthChecks": "(,10.0.32767]",
+            "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "(,10.0.32767]",
+            "Microsoft.Extensions.Features": "(,10.0.32767]",
+            "Microsoft.Extensions.FileProviders.Abstractions": "(,10.0.32767]",
+            "Microsoft.Extensions.FileProviders.Composite": "(,10.0.32767]",
+            "Microsoft.Extensions.FileProviders.Physical": "(,10.0.32767]",
+            "Microsoft.Extensions.FileSystemGlobbing": "(,10.0.32767]",
+            "Microsoft.Extensions.Hosting": "(,10.0.32767]",
+            "Microsoft.Extensions.Hosting.Abstractions": "(,10.0.32767]",
+            "Microsoft.Extensions.Http": "(,10.0.32767]",
+            "Microsoft.Extensions.Identity.Core": "(,10.0.32767]",
+            "Microsoft.Extensions.Identity.Stores": "(,10.0.32767]",
+            "Microsoft.Extensions.Localization": "(,10.0.32767]",
+            "Microsoft.Extensions.Localization.Abstractions": "(,10.0.32767]",
+            "Microsoft.Extensions.Logging": "(,10.0.32767]",
+            "Microsoft.Extensions.Logging.Abstractions": "(,10.0.32767]",
+            "Microsoft.Extensions.Logging.Configuration": "(,10.0.32767]",
+            "Microsoft.Extensions.Logging.Console": "(,10.0.32767]",
+            "Microsoft.Extensions.Logging.Debug": "(,10.0.32767]",
+            "Microsoft.Extensions.Logging.EventLog": "(,10.0.32767]",
+            "Microsoft.Extensions.Logging.EventSource": "(,10.0.32767]",
+            "Microsoft.Extensions.Logging.TraceSource": "(,10.0.32767]",
+            "Microsoft.Extensions.ObjectPool": "(,10.0.32767]",
+            "Microsoft.Extensions.Options": "(,10.0.32767]",
+            "Microsoft.Extensions.Options.ConfigurationExtensions": "(,10.0.32767]",
+            "Microsoft.Extensions.Options.DataAnnotations": "(,10.0.32767]",
+            "Microsoft.Extensions.Primitives": "(,10.0.32767]",
+            "Microsoft.Extensions.Validation": "(,10.0.32767]",
+            "Microsoft.Extensions.WebEncoders": "(,10.0.32767]",
+            "Microsoft.JSInterop": "(,10.0.32767]",
+            "Microsoft.Net.Http.Headers": "(,10.0.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
             "Microsoft.Win32.Primitives": "(,4.3.32767]",
             "Microsoft.Win32.Registry": "(,5.0.32767]",
@@ -7186,6 +7536,7 @@
             "System.Diagnostics.Contracts": "(,4.3.32767]",
             "System.Diagnostics.Debug": "(,4.3.32767]",
             "System.Diagnostics.DiagnosticSource": "(,10.0.32767]",
+            "System.Diagnostics.EventLog": "(,10.0.32767]",
             "System.Diagnostics.FileVersionInfo": "(,4.3.32767]",
             "System.Diagnostics.Process": "(,4.3.32767]",
             "System.Diagnostics.StackTrace": "(,4.3.32767]",
@@ -7196,6 +7547,7 @@
             "System.Drawing.Primitives": "(,4.3.32767]",
             "System.Dynamic.Runtime": "(,4.3.32767]",
             "System.Formats.Asn1": "(,10.0.32767]",
+            "System.Formats.Cbor": "(,10.0.32767]",
             "System.Formats.Tar": "(,10.0.32767]",
             "System.Globalization": "(,4.3.32767]",
             "System.Globalization.Calendars": "(,4.3.32767]",
@@ -7271,6 +7623,7 @@
             "System.Security.Cryptography.OpenSsl": "(,5.0.32767]",
             "System.Security.Cryptography.Primitives": "(,4.3.32767]",
             "System.Security.Cryptography.X509Certificates": "(,4.3.32767]",
+            "System.Security.Cryptography.Xml": "(,10.0.32767]",
             "System.Security.Principal": "(,4.3.32767]",
             "System.Security.Principal.Windows": "(,5.0.32767]",
             "System.Security.SecureString": "(,4.3.32767]",
@@ -7284,6 +7637,7 @@
             "System.Threading.AccessControl": "(,10.0.32767]",
             "System.Threading.Channels": "(,10.0.32767]",
             "System.Threading.Overlapped": "(,4.3.32767]",
+            "System.Threading.RateLimiting": "(,10.0.32767]",
             "System.Threading.Tasks": "(,4.3.32767]",
             "System.Threading.Tasks.Dataflow": "(,10.0.32767]",
             "System.Threading.Tasks.Extensions": "(,5.0.32767]",
@@ -7357,6 +7711,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -7391,6 +7748,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -7732,8 +8091,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -8090,6 +8451,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -8124,6 +8488,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -8465,8 +8831,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -8823,6 +9191,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -8857,6 +9228,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -9198,8 +9571,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -9562,6 +9937,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -9596,6 +9974,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -9937,8 +10317,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -10301,6 +10683,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -10335,6 +10720,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -10676,8 +11063,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -11034,6 +11423,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -11068,6 +11460,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -11409,8 +11803,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -11767,6 +12163,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -11801,6 +12200,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -12142,8 +12543,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -12488,6 +12891,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -12532,6 +12938,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -12856,12 +13264,12 @@
           "dependencies": {
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
-              "version": "[8.0.2, )",
+              "version": "[10.0.0, )",
               "versionCentrallyManaged": true
             },
             "Microsoft.Extensions.Options": {
               "target": "Package",
-              "version": "[8.0.2, )",
+              "version": "[10.0.0, )",
               "versionCentrallyManaged": true
             },
             "Microsoft.SourceLink.GitHub": {
@@ -12883,8 +13291,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -13241,6 +13651,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -13295,6 +13708,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -13629,12 +14044,12 @@
             },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
-              "version": "[8.0.2, )",
+              "version": "[10.0.0, )",
               "versionCentrallyManaged": true
             },
             "Microsoft.Extensions.Options": {
               "target": "Package",
-              "version": "[8.0.2, )",
+              "version": "[10.0.0, )",
               "versionCentrallyManaged": true
             },
             "Microsoft.SourceLink.GitHub": {
@@ -13656,8 +14071,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -14014,6 +14431,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -14048,6 +14468,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -14389,8 +14811,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -14838,6 +15262,7 @@
         "warningProperties": {
           "allWarningsAsErrors": true,
           "noWarn": [
+            "NU5105",
             "NU5128"
           ],
           "warnAsError": [
@@ -14874,6 +15299,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -15215,8 +15642,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",
@@ -15553,6 +15982,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -15587,6 +16019,8 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
+            "Microsoft.EntityFrameworkCore": "8.0.11",
+            "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
             "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
             "Microsoft.Extensions.Options": "8.0.2",
             "Microsoft.NET.Test.Sdk": "17.13.0",
@@ -15928,8 +16362,10 @@
             "coverlet.collector": "6.0.4",
             "FluentValidation": "11.12.0",
             "FluentValidation.DependencyInjectionExtensions": "11.12.0",
-            "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-            "Microsoft.Extensions.Options": "8.0.2",
+            "Microsoft.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+            "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+            "Microsoft.Extensions.Options": "10.0.0",
             "Microsoft.NET.Test.Sdk": "17.13.0",
             "Microsoft.SourceLink.GitHub": "10.0.303",
             "MinVer": "6.0.0",

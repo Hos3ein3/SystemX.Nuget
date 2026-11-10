@@ -1,11 +1,18 @@
 namespace SystemX.SharedKernel.MultiTenancy;
 
-/// <summary>An object that belongs to one tenant.</summary>
+/// <summary>
+/// Marks an entity that belongs to exactly one tenant.
+/// </summary>
 public interface ITenantScoped
 {
-    /// <summary>Gets the tenant id.</summary>
-    string TenantId { get; }
+    /// <summary>
+    /// Gets the tenant identifier.
+    /// </summary>
+    TenantId TenantId { get; }
 
-    /// <summary>Assigns the tenant. Called by infrastructure only.</summary>
-    void AssignTenant(string tenantId);
+    /// <summary>
+    /// Assigns the tenant identifier. Called by infrastructure interceptors.
+    /// </summary>
+    /// <param name="tenantId">The tenant identifier to assign.</param>
+    void AssignTenant(TenantId tenantId);
 }

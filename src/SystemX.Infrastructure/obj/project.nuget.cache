@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dbfgHEgys3s=",
+  "dgSpecHash": "Yn+dBKgFptI=",
   "success": true,
   "projectFilePath": "/Users/mohammadhosein/Development/SystemX/nuget/src/SystemX.Infrastructure/SystemX.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -8,8 +8,11 @@
     "/Users/mohammadhosein/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.12.0/fluentvalidation.dependencyinjectionextensions.11.12.0.nupkg.sha512",
     "/Users/mohammadhosein/.nuget/packages/microsoft.build.tasks.git/10.0.303/microsoft.build.tasks.git.10.0.303.nupkg.sha512",
     "/Users/mohammadhosein/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.2/microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "/Users/mohammadhosein/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.0/microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
     "/Users/mohammadhosein/.nuget/packages/microsoft.extensions.options/8.0.2/microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "/Users/mohammadhosein/.nuget/packages/microsoft.extensions.options/10.0.0/microsoft.extensions.options.10.0.0.nupkg.sha512",
     "/Users/mohammadhosein/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/Users/mohammadhosein/.nuget/packages/microsoft.extensions.primitives/10.0.0/microsoft.extensions.primitives.10.0.0.nupkg.sha512",
     "/Users/mohammadhosein/.nuget/packages/microsoft.sourcelink.common/10.0.303/microsoft.sourcelink.common.10.0.303.nupkg.sha512",
     "/Users/mohammadhosein/.nuget/packages/microsoft.sourcelink.github/10.0.303/microsoft.sourcelink.github.10.0.303.nupkg.sha512",
     "/Users/mohammadhosein/.nuget/packages/minver/6.0.0/minver.6.0.0.nupkg.sha512",

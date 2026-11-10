@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright (c) 2026 SystemX")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Localization and internationalization infrastructure for SystemX.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d497fedb8bcd7f33d2d944c08d4f3e844b237c80")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0-preview.0.5+accde1d1e1394d1c44959197af4335556cd4d854")]
 [assembly: System.Reflection.AssemblyProductAttribute("SystemX.Infrastructure.Localization")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SystemX.Infrastructure.Localization")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

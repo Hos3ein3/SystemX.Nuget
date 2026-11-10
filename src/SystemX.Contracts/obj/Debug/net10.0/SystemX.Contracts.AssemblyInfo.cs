@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright (c) 2026 SystemX")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("DTOs, request/response models, and integration events for SystemX.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0-preview.0.5+accde1d1e1394d1c44959197af4335556cd4d854")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0-preview.0.6+0b1a24eff1c7d28a67dd09432b2888e8cddbf5fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("SystemX.Contracts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SystemX.Contracts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

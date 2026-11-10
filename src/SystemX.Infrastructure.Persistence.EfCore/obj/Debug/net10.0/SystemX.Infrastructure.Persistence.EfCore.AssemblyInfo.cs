@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute(("Entity Framework Core persistence base abstractions and implementation for System" +
     "X."))]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0-preview.0.5+accde1d1e1394d1c44959197af4335556cd4d854")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b1a24eff1c7d28a67dd09432b2888e8cddbf5fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("SystemX.Infrastructure.Persistence.EfCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SystemX.Infrastructure.Persistence.EfCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

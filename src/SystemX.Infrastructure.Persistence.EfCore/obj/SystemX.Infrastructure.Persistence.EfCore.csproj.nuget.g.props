@@ -21,11 +21,13 @@
     <Import Project="$(NuGetPackageRoot)microsoft.sourcelink.common/10.0.303/buildTransitive/Microsoft.SourceLink.Common.props" Condition="Exists('$(NuGetPackageRoot)microsoft.sourcelink.common/10.0.303/buildTransitive/Microsoft.SourceLink.Common.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.build.tasks.git/10.0.303/buildTransitive/Microsoft.Build.Tasks.Git.props" Condition="Exists('$(NuGetPackageRoot)microsoft.build.tasks.git/10.0.303/buildTransitive/Microsoft.Build.Tasks.Git.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.sourcelink.github/10.0.303/build/Microsoft.SourceLink.GitHub.props" Condition="Exists('$(NuGetPackageRoot)microsoft.sourcelink.github/10.0.303/build/Microsoft.SourceLink.GitHub.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore/10.0.0/buildTransitive/net10.0/Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore/10.0.0/buildTransitive/net10.0/Microsoft.EntityFrameworkCore.props')" />
   </ImportGroup>
   <ImportGroup Condition=" '$(TargetFramework)' == 'net8.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.sourcelink.common/10.0.303/buildTransitive/Microsoft.SourceLink.Common.props" Condition="Exists('$(NuGetPackageRoot)microsoft.sourcelink.common/10.0.303/buildTransitive/Microsoft.SourceLink.Common.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.build.tasks.git/10.0.303/buildTransitive/Microsoft.Build.Tasks.Git.props" Condition="Exists('$(NuGetPackageRoot)microsoft.build.tasks.git/10.0.303/buildTransitive/Microsoft.Build.Tasks.Git.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.sourcelink.github/10.0.303/build/Microsoft.SourceLink.GitHub.props" Condition="Exists('$(NuGetPackageRoot)microsoft.sourcelink.github/10.0.303/build/Microsoft.SourceLink.GitHub.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore/8.0.11/buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore/8.0.11/buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net10.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_SourceLink_Common Condition=" '$(PkgMicrosoft_SourceLink_Common)' == '' ">/Users/mohammadhosein/.nuget/packages/microsoft.sourcelink.common/10.0.303</PkgMicrosoft_SourceLink_Common>

@@ -1,10 +1,9 @@
 using System.Reflection;
 using FluentValidation;
-using FluentValidation.Results;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Options;
 using SystemX.Application.Abstractions.Cqrs;
+using SystemX.Application.Abstractions.Validation;
 using SystemX.SharedKernel.Results;
 
 namespace SystemX.Infrastructure.Validation;
@@ -15,13 +14,33 @@ namespace SystemX.Infrastructure.Validation;
 public static class ServiceCollectionExtensions
 {
     /// <summary>
-    /// Registers FluentValidation validators from the specified assemblies and decorates CQRS command and query handlers with validation logic.
+    /// Registers the <see cref="IValidationService"/> and configured <see cref="ValidationOptions"/>.
+    /// </summary>
+    /// <param name="services">The service collection.</param>
+    /// <param name="configure">Optional configuration action for validation options.</param>
+    /// <returns>The service collection for chaining.</returns>
+    public static IServiceCollection AddSystemXValidation(
+        this IServiceCollection services,
+        Action<ValidationOptions>? configure = null)
+    {
+        ArgumentNullException.ThrowIfNull(services);
+
+        ValidationOptions options = new();
+        configure?.Invoke(options);
+        services.TryAddSingleton(options);
+        services.AddScoped<IValidationService, ValidationService>();
+
+        return services;
+    }
+
+    /// <summary>
+    /// Registers FluentValidation validators from the specified assemblies, registers <see cref="IValidationService"/>,
+    /// and decorates existing CQRS command and query handlers with validation logic.
     /// </summary>
     /// <param name="services">The service collection.</param>
     /// <param name="assemblies">The assemblies to scan for validators.</param>
     /// <param name="configure">Optional configuration action for validation options.</param>
     /// <returns>The service collection for chaining.</returns>
-    /// <exception cref="InvalidOperationException">Thrown if no command or query handlers are registered prior to calling this method.</exception>
     public static IServiceCollection AddSystemXValidation(
         this IServiceCollection services,
         Assembly[] assemblies,
@@ -30,14 +49,7 @@ public static class ServiceCollectionExtensions
         ArgumentNullException.ThrowIfNull(services);
         ArgumentNullException.ThrowIfNull(assemblies);
 
-        if (configure != null)
-        {
-            services.Configure(configure);
-        }
-        else
-        {
-            services.AddOptions<ValidationOptions>();
-        }
+        services.AddSystemXValidation(configure);
 
         // Register validators from assemblies
         foreach (Assembly assembly in assemblies)
@@ -45,16 +57,9 @@ public static class ServiceCollectionExtensions
             services.AddValidatorsFromAssembly(assembly, ServiceLifetime.Scoped);
         }
 
-        // Wrap existing ICommandHandler<,> and IQueryHandler<,> registrations
-        bool decoratedAny = DecorateHandlers(services, typeof(ICommandHandler<,>), typeof(ValidationCommandHandlerDecorator<,>));
-        bool decoratedQuery = DecorateHandlers(services, typeof(IQueryHandler<,>), typeof(ValidationQueryHandlerDecorator<,>));
-
-        if (!decoratedAny && !decoratedQuery)
-        {
-            throw new InvalidOperationException(
-                "AddSystemXValidation was called, but no command or query handler registrations were found in the IServiceCollection. " +
-                "Ensure that CQRS handlers are registered BEFORE calling AddSystemXValidation.");
-        }
+        // Wrap existing ICommandHandler<,> and IQueryHandler<,> registrations if present
+        DecorateHandlers(services, typeof(ICommandHandler<,>), typeof(ValidationCommandHandlerDecorator<,>));
+        DecorateHandlers(services, typeof(IQueryHandler<,>), typeof(ValidationQueryHandlerDecorator<,>));
 
         return services;
     }
@@ -153,50 +158,22 @@ internal static class ValidationFailureResultHelper<TResult>
 
 internal sealed class ValidationCommandHandlerDecorator<TCommand, TResult>(
     ICommandHandler<TCommand, TResult> innerHandler,
-    IEnumerable<IValidator<TCommand>> validators,
-    IOptions<ValidationOptions> options) : ICommandHandler<TCommand, TResult>
+    IValidationService validationService) : ICommandHandler<TCommand, TResult>
     where TCommand : ICommand<TResult>
 {
     public async Task<TResult> HandleAsync(TCommand command, CancellationToken cancellationToken = default)
     {
-        if (validators.Any())
+        var failures = await validationService.GetFailuresAsync(command, cancellationToken).ConfigureAwait(false);
+        if (failures.Count > 0)
         {
-            ValidationContext<TCommand> context = new(command);
-            List<FluentValidation.Results.ValidationFailure> failures = [];
+            ValidationError validationError = new(failures);
 
-            foreach (IValidator<TCommand> validator in validators)
+            if (ValidationFailureResultHelper<TResult>.IsResultType)
             {
-                ValidationResult result = await validator.ValidateAsync(context, cancellationToken).ConfigureAwait(false);
-                if (!result.IsValid)
-                {
-                    failures.AddRange(result.Errors);
-                    if (options.Value.StopOnFirstFailure)
-                    {
-                        break;
-                    }
-                }
+                return ValidationFailureResultHelper<TResult>.CreateFailureResult(validationError);
             }
 
-            if (failures.Count > 0)
-            {
-                List<SharedKernel.Results.ValidationFailure> domainFailures = new(failures.Count);
-                foreach (FluentValidation.Results.ValidationFailure f in failures)
-                {
-                    string code = options.Value.IncludeErrorCodes && !string.IsNullOrWhiteSpace(f.ErrorCode)
-                        ? f.ErrorCode
-                        : "Validation.Failed";
-                    domainFailures.Add(new SharedKernel.Results.ValidationFailure(f.PropertyName, code, f.ErrorMessage));
-                }
-
-                ValidationError validationError = new(domainFailures);
-
-                if (ValidationFailureResultHelper<TResult>.IsResultType)
-                {
-                    return ValidationFailureResultHelper<TResult>.CreateFailureResult(validationError);
-                }
-
-                throw new RequestValidationException(domainFailures);
-            }
+            throw new RequestValidationException(failures);
         }
 
         return await innerHandler.HandleAsync(command, cancellationToken).ConfigureAwait(false);
@@ -205,50 +182,22 @@ internal sealed class ValidationCommandHandlerDecorator<TCommand, TResult>(
 
 internal sealed class ValidationQueryHandlerDecorator<TQuery, TResult>(
     IQueryHandler<TQuery, TResult> innerHandler,
-    IEnumerable<IValidator<TQuery>> validators,
-    IOptions<ValidationOptions> options) : IQueryHandler<TQuery, TResult>
+    IValidationService validationService) : IQueryHandler<TQuery, TResult>
     where TQuery : IQuery<TResult>
 {
     public async Task<TResult> HandleAsync(TQuery query, CancellationToken cancellationToken = default)
     {
-        if (validators.Any())
+        var failures = await validationService.GetFailuresAsync(query, cancellationToken).ConfigureAwait(false);
+        if (failures.Count > 0)
         {
-            ValidationContext<TQuery> context = new(query);
-            List<FluentValidation.Results.ValidationFailure> failures = [];
+            ValidationError validationError = new(failures);
 
-            foreach (IValidator<TQuery> validator in validators)
+            if (ValidationFailureResultHelper<TResult>.IsResultType)
             {
-                ValidationResult result = await validator.ValidateAsync(context, cancellationToken).ConfigureAwait(false);
-                if (!result.IsValid)
-                {
-                    failures.AddRange(result.Errors);
-                    if (options.Value.StopOnFirstFailure)
-                    {
-                        break;
-                    }
-                }
+                return ValidationFailureResultHelper<TResult>.CreateFailureResult(validationError);
             }
 
-            if (failures.Count > 0)
-            {
-                List<SharedKernel.Results.ValidationFailure> domainFailures = new(failures.Count);
-                foreach (FluentValidation.Results.ValidationFailure f in failures)
-                {
-                    string code = options.Value.IncludeErrorCodes && !string.IsNullOrWhiteSpace(f.ErrorCode)
-                        ? f.ErrorCode
-                        : "Validation.Failed";
-                    domainFailures.Add(new SharedKernel.Results.ValidationFailure(f.PropertyName, code, f.ErrorMessage));
-                }
-
-                ValidationError validationError = new(domainFailures);
-
-                if (ValidationFailureResultHelper<TResult>.IsResultType)
-                {
-                    return ValidationFailureResultHelper<TResult>.CreateFailureResult(validationError);
-                }
-
-                throw new RequestValidationException(domainFailures);
-            }
+            throw new RequestValidationException(failures);
         }
 
         return await innerHandler.HandleAsync(query, cancellationToken).ConfigureAwait(false);

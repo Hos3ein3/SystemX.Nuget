@@ -10,11 +10,12 @@ For architectural layering and package reference restrictions, refer to [AGENTS.
 |---|---|---|
 | `SystemX.SharedKernel` | Domain and application building blocks shared by all apps: Entity, AggregateRoot, ValueObject, Enumeration, domain events, business rules, Result and Error, Guard, IClock, strongly-typed IDs, specifications, pagination types, audit/soft-delete/tenant markers. | `dotnet add package SystemX.SharedKernel` |
 | `SystemX.Contracts` | The public data shapes exchanged between services and clients: Request/response DTOs, `PagedRequest`/`PagedResponse<T>`, integration events, error codes. Plain records. | `dotnet add package SystemX.Contracts` |
-| `SystemX.Application.Abstractions` | The interfaces the application layer codes against: `ICommand`, `IQuery`, handler interfaces, dispatcher interfaces, `IUnitOfWork`, `IRepository<T>`, `IReadRepository<T>`, `ICurrentUser`, `ITenantContext`, `ICurrentCulture`, `ICacheService`, `IEventBus`. | `dotnet add package SystemX.Application.Abstractions` |
+| `SystemX.Application.Abstractions` | The interfaces the application layer codes against: `ICommand`, `IQuery`, handler interfaces, dispatcher interfaces, `IUnitOfWork`, `ITransactionScope`, `IRepository<TEntity, TId>`, `IReadRepository<TEntity, TId>`, `IRepositoryFactory`, `IDatabaseFactory`, `IDatabaseSession`, `IDatabaseConnectionFactory`, `IReadConnectionFactory`, `IDomainEventDispatcher`, `ICurrentUser`, `ITenantContext`, `ICurrentCulture`, `ICacheService`, `IEventBus`. | `dotnet add package SystemX.Application.Abstractions` |
 | `SystemX.Contracts.Validation` | FluentValidation validators for the shared DTOs in `SystemX.Contracts`. Lets clients and services validate the same DTOs without making `Contracts` depend on FluentValidation. | `dotnet add package SystemX.Contracts.Validation` |
 | `SystemX.Infrastructure.Validation` | Runs FluentValidation on commands and queries through a handler decorator. Turns failures into `Result` with `ValidationError` (or throws `RequestValidationException`). Provides reusable rules for IDs. | `dotnet add package SystemX.Infrastructure.Validation` |
 | `SystemX.Infrastructure.Serialization` | `System.Text.Json` support: converters and type converters for strongly-typed IDs and other SystemX types. | `dotnet add package SystemX.Infrastructure.Serialization` |
 | `SystemX.Infrastructure` | Convenience package for the common Infrastructure packages. Contains NO source code, only references. | `dotnet add package SystemX.Infrastructure` |
+| `SystemX.Infrastructure.BackgroundJobs` | Background jobs and recurring task scheduling infrastructure. | `dotnet add package SystemX.Infrastructure.BackgroundJobs` |
 | `SystemX.Infrastructure.Caching` | Cache abstraction implementations (memory, Redis), cache decorators and key conventions. | `dotnet add package SystemX.Infrastructure.Caching` |
 | `SystemX.Infrastructure.Cors` | CORS policy setup with options. | `dotnet add package SystemX.Infrastructure.Cors` |
 | `SystemX.Infrastructure.Cqrs` | Command/query dispatchers (no MediatR), handler registration and handler decorators (logging, transaction). | `dotnet add package SystemX.Infrastructure.Cqrs` |
@@ -24,7 +25,7 @@ For architectural layering and package reference restrictions, refer to [AGENTS.
 | `SystemX.Infrastructure.Messaging` | Event bus, integration-event publishing and consuming, outbox/inbox. | `dotnet add package SystemX.Infrastructure.Messaging` |
 | `SystemX.Infrastructure.MultiTenancy` | Tenant resolution (header, claim, host), `ITenantContext` implementation, tenant query filters. | `dotnet add package SystemX.Infrastructure.MultiTenancy` |
 | `SystemX.Infrastructure.Observability` | OpenTelemetry traces and metrics, exporters, instrumentation, naming conventions. | `dotnet add package SystemX.Infrastructure.Observability` |
-| `SystemX.Infrastructure.Persistence.EfCore` | Provider-neutral EF Core base: `UnitOfWork`, generic repositories, specification evaluator, interceptors (audit, soft delete, tenant, domain-event dispatch), strongly-typed ID value converters. | `dotnet add package SystemX.Infrastructure.Persistence.EfCore` |
+| `SystemX.Infrastructure.Persistence.EfCore` | Provider-neutral EF Core base: multi-tenancy models (Row, Schema, Database), concurrency handling, entity markers, base DbContext with unit of work, save pipeline (audit, soft delete, tenant, domain events), query filters, strongly-typed ID value converters, specification evaluator, generic repositories, factories (`IRepositoryFactory`, `IDatabaseFactory`, `IDatabaseSession`), connection factory (`IDatabaseConnectionFactory`), DI registration. | `dotnet add package SystemX.Infrastructure.Persistence.EfCore` |
 | `SystemX.Infrastructure.Persistence.Mongo` | MongoDB repositories, serializers and conventions. Independent from EF Core. | `dotnet add package SystemX.Infrastructure.Persistence.Mongo` |
 | `SystemX.Infrastructure.Persistence.Postgresql` | PostgreSQL provider setup on top of `EfCore` (Npgsql, PostgreSQL specifics only). | `dotnet add package SystemX.Infrastructure.Persistence.Postgresql` |
 | `SystemX.Infrastructure.Persistence.SqlServer` | SQL Server provider setup on top of `EfCore` (connection, options, SQL Server specifics only). | `dotnet add package SystemX.Infrastructure.Persistence.SqlServer` |
@@ -98,6 +99,7 @@ Links to detailed feature documentation and complete, compilable examples:
 - [Pagination](docs/SystemX.Contracts/Pagination.md)
 
 ### SystemX.Application.Abstractions
+- [DatabaseFactories](docs/SystemX.Application.Abstractions/DatabaseFactories.md)
 - [TenantAbstractions](docs/SystemX.Application.Abstractions/TenantAbstractions.md)
 
 ### SystemX.Contracts.Validation
@@ -116,7 +118,18 @@ Links to detailed feature documentation and complete, compilable examples:
 - [MultiTenancySetup](docs/SystemX.Infrastructure.MultiTenancy/MultiTenancySetup.md)
 
 ### SystemX.Infrastructure.Persistence.EfCore
-- [TenancyAndConcurrency](docs/SystemX.Infrastructure.Persistence.EfCore/TenancyAndConcurrency.md)
+- [ProtectingTheApplicationLayer](docs/SystemX.Infrastructure.Persistence.EfCore/ProtectingTheApplicationLayer.md)
+- [DatabaseFactory](docs/SystemX.Infrastructure.Persistence.EfCore/DatabaseFactory.md)
+- [RepositoryFactory](docs/SystemX.Infrastructure.Persistence.EfCore/RepositoryFactory.md)
+- [ConnectionFactory](docs/SystemX.Infrastructure.Persistence.EfCore/ConnectionFactory.md)
+- [SystemXDbContext](docs/SystemX.Infrastructure.Persistence.EfCore/SystemXDbContext.md)
+- [SavePipeline](docs/SystemX.Infrastructure.Persistence.EfCore/SavePipeline.md)
+- [QueryFilters](docs/SystemX.Infrastructure.Persistence.EfCore/QueryFilters.md)
+- [TenancyModels](docs/SystemX.Infrastructure.Persistence.EfCore/TenancyModels.md)
+- [Concurrency](docs/SystemX.Infrastructure.Persistence.EfCore/Concurrency.md)
+- [StronglyTypedIds](docs/SystemX.Infrastructure.Persistence.EfCore/StronglyTypedIds.md)
+- [Repositories](docs/SystemX.Infrastructure.Persistence.EfCore/Repositories.md)
+- [UnitOfWork](docs/SystemX.Infrastructure.Persistence.EfCore/UnitOfWork.md)
 
 ## 4. How to publish packages to NuGet
 

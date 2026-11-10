@@ -6,8 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SystemX.SharedKernel\SystemX.SharedKernel.csproj" />
-    <ProjectReference Include="..\SystemX.Contracts\SystemX.Contracts.csproj" />
     <ProjectReference Include="..\SystemX.Application.Abstractions\SystemX.Application.Abstractions.csproj" />
   </ItemGroup>
 

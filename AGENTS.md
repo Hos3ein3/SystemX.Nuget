@@ -13,14 +13,14 @@ Every project has ONE purpose. If new code does not fit the purpose of a project
 |---|---|---|---|
 | `SystemX.SharedKernel` | Domain and application building blocks shared by all apps. | Entity, AggregateRoot, ValueObject, Enumeration, domain events, business rules, Result and Error, Guard, IClock, strongly-typed IDs, specifications, pagination types, multi-tenancy model/info types, concurrency markers, entity markers, translations, audit/soft-delete markers. | Third-party packages, EF Core, ASP.NET, JSON, logging, any I/O. |
 | `SystemX.Contracts` | The public data shapes exchanged between services and clients. | Request/response DTOs, `PagedRequest`/`PagedResponse<T>`, integration events, error codes. Plain records. | Logic, domain types, interfaces for behavior, any reference to another SystemX project or third-party package. |
-| `SystemX.Application.Abstractions` | The interfaces the application layer codes against. | `ICommand`, `IQuery`, handler interfaces, dispatcher interfaces, `IUnitOfWork`, `IRepository<T>`, `IReadRepository<T>`, `ICurrentUser`, `ITenantContext`, `ITenantContextAccessor`, `ITenantStore`, `ITenantResolutionStrategy`, `ITenantConnectionResolver`, `ITenantSchemaProvider`, `ITenantProvisioner`, `ICurrentCulture`, `ICacheService`, `IEventBus`. | Implementations, third-party packages, anything from Infrastructure. |
+| `SystemX.Application.Abstractions` | The interfaces the application layer codes against. | `ICommand`, `IQuery`, handler interfaces, dispatcher interfaces, `IUnitOfWork`, `ITransactionScope`, `IRepository<TEntity, TId>`, `IReadRepository<TEntity, TId>`, `IRepositoryFactory`, `IDatabaseFactory`, `IDatabaseSession`, `IDatabaseConnectionFactory`, `IReadConnectionFactory`, `IDomainEventDispatcher`, `IIntegrationEventDispatcher`, `IIntegrationEventHandler<T>`, `IntegrationEventContext`, `IValidationService`, `RequestValidationException`, `ICurrentUser`, `ITenantContext`, `ITenantContextAccessor`, `ITenantStore`, `ITenantResolutionStrategy`, `ITenantConnectionResolver`, `ITenantSchemaProvider`, `ITenantProvisioner`, `ICurrentCulture`, `ICacheService`, `IEventBus`, `IBackgroundJobScheduler`, `IRecurringJobScheduler`, `IBackgroundJob<TArgs>`, `BackgroundJobContext`, `BackgroundJobOptions`, `RecurringJobOptions`, `RecurringSchedule`. | Implementations, third-party packages, anything from Infrastructure. |
 
 ### 1.2 Validation and serialization
 
 | Project | Purpose |
 |---|---|
 | `SystemX.Contracts.Validation` | FluentValidation validators for the shared DTOs in `SystemX.Contracts`. Lets clients and services validate the same DTOs without making `Contracts` depend on FluentValidation. |
-| `SystemX.Infrastructure.Validation` | Runs FluentValidation on commands and queries through a handler decorator. Turns failures into `Result` with `ValidationError` (or throws `RequestValidationException`). Provides reusable rules for IDs. |
+| `SystemX.Infrastructure.Validation` | `IValidationService` implementation, runs FluentValidation on commands and queries through a handler decorator. Turns failures into `Result` with `ValidationError` (or throws `RequestValidationException`). Provides reusable rules for IDs. |
 | `SystemX.Infrastructure.Serialization` | `System.Text.Json` support: converters and type converters for strongly-typed IDs and other SystemX types. |
 
 ### 1.3 Application and API infrastructure
@@ -28,18 +28,19 @@ Every project has ONE purpose. If new code does not fit the purpose of a project
 | Project | Purpose |
 |---|---|
 | `SystemX.Infrastructure.Cqrs` | Command/query dispatchers (no MediatR), handler registration and handler decorators (logging, transaction). |
-| `SystemX.Infrastructure.Messaging` | Event bus, integration-event publishing and consuming, outbox/inbox. |
+| `SystemX.Infrastructure.BackgroundJobs` | Runs background and recurring jobs with Hangfire and Quartz behind the provider-neutral contracts; restores tenant, culture and correlation for each job. |
+| `SystemX.Infrastructure.Messaging` | Event bus, integration-event publishing and consuming, integration event dispatcher and handler registration, outbox/inbox. |
 | `SystemX.Infrastructure.Web` | ASP.NET Core pipeline setup: middleware, ProblemDetails, API versioning, Swagger, Result-to-HTTP mapping, JSON option wiring. |
 | `SystemX.Infrastructure.Cors` | CORS policy setup with options. |
 | `SystemX.Infrastructure.RateLimiter` | Rate-limiting policies (ASP.NET Core rate limiting) with options. |
-| `SystemX.Infrastructure.Localization` | Culture resolution, resource-based localization, `ICurrentCulture` implementation. |
+| `SystemX.Infrastructure.Localization` | Culture resolution, resource-based localization, `ICurrentCulture` implementation, ASP.NET Core localization middleware. |
 | `SystemX.Infrastructure.MultiTenancy` | Tenant resolution strategies (header, claim, host, route, query), tenant store implementations (in-memory, configuration, cached), `ITenantContextAccessor` implementation, ASP.NET Core multi-tenancy middleware. |
 
 ### 1.4 Data
 
 | Project | Purpose |
 |---|---|
-| `SystemX.Infrastructure.Persistence.EfCore` | Provider-neutral EF Core base: multi-tenancy models (Row, Schema, Database), concurrency handling, entity markers, `UnitOfWork`, generic repositories, specification evaluator, interceptors (audit, soft delete, tenant, domain-event dispatch), strongly-typed ID value converters. |
+| `SystemX.Infrastructure.Persistence.EfCore` | Provider-neutral EF Core base: multi-tenancy models (Row, Schema, Database), concurrency handling, entity markers, base DbContext with unit of work, save pipeline (audit, soft delete, tenant, domain events), query filters, strongly-typed ID value converters, specification evaluator, generic repositories, factories (`IRepositoryFactory`, `IDatabaseFactory`, `IDatabaseSession`), connection factory (`IDatabaseConnectionFactory`), DI registration. |
 | `SystemX.Infrastructure.Persistence.SqlServer` | SQL Server provider setup on top of `EfCore` (connection, options, SQL Server specifics only). |
 | `SystemX.Infrastructure.Persistence.Postgresql` | PostgreSQL provider setup on top of `EfCore` (Npgsql, PostgreSQL specifics only). |
 | `SystemX.Infrastructure.Persistence.Mongo` | MongoDB repositories, serializers and conventions. Independent from EF Core. |
@@ -58,7 +59,7 @@ Every project has ONE purpose. If new code does not fit the purpose of a project
 
 | Project | Purpose |
 |---|---|
-| `SystemX.Infrastructure` | Convenience package for the common Infrastructure packages. Contains NO source code, only references. It never includes `Contracts.Validation`, a database provider (`SqlServer`, `Postgresql`, `Mongo`) or other optional packages. |
+| `SystemX.Infrastructure` | Convenience package for the common Infrastructure packages. Contains NO source code, only references. It never includes `Contracts.Validation`, a database provider (`SqlServer`, `Postgresql`, `Mongo`), `BackgroundJobs` (heavy dependencies), or other optional packages. |
 
 ## 2. Dependency rules (hard rules)
 
@@ -78,6 +79,8 @@ Every project has ONE purpose. If new code does not fit the purpose of a project
 12. `SharedKernel`, `Contracts` and `Application.Abstractions` MUST NOT reference any `SystemX.Infrastructure.*` package or `SystemX.Contracts.Validation`.
 13. The meta-package `SystemX.Infrastructure` MUST contain no source code.
 14. A shared need between two Infrastructure packages is solved by moving the shared abstraction down into `Application.Abstractions` or `SharedKernel`, never by adding a reference between them.
+15. EF Core packages and namespaces are allowed only in the persistence projects (see Persistence boundary).
+16. Hangfire and Quartz packages and namespaces are allowed only in `SystemX.Infrastructure.BackgroundJobs` (see Scheduler boundary).
 
 ### Allowed reference matrix
 
@@ -96,7 +99,41 @@ Every project has ONE purpose. If new code does not fit the purpose of a project
 | Infra.Persistence.Mongo | X | X | X | | | |
 | SystemX.Infrastructure (meta) | | | | X | X | |
 
-## 3. Documentation rules (MANDATORY)
+## 3. Persistence boundary (MANDATORY)
+
+The application layer never knows EF Core. This is the most important boundary of this repository and of every application that uses it.
+
+### Where EF Core is allowed
+- `SystemX.Infrastructure.Persistence.EfCore`, `SystemX.Infrastructure.Persistence.SqlServer`, `SystemX.Infrastructure.Persistence.Postgresql`.
+- In consumer applications: only in their Infrastructure/Persistence project (DbContext, `IEntityTypeConfiguration<>`, migrations, repository implementations).
+
+### Where EF Core is FORBIDDEN
+`SharedKernel`, `Contracts`, `Contracts.Validation`, `Application.Abstractions`, every other `SystemX.Infrastructure.*` package, and in consumer applications the Domain and Application projects (commands, queries, handlers, validators, domain services, endpoints).
+
+### Forbidden names outside the persistence projects
+`using Microsoft.EntityFrameworkCore`, `DbContext`, `DbSet<T>`, `ModelBuilder`, `IEntityTypeConfiguration<T>`, `Include(...)`, `ThenInclude(...)`, `AsNoTracking()`, `AsSplitQuery()`, `FromSql*`, `ExecuteUpdate*`, `ExecuteDelete*`, `EF.Functions`, `DbUpdateException`, `DbUpdateConcurrencyException`, migrations, and any repository method that returns `IQueryable<T>`.
+
+### What the application layer uses instead
+| Need | Use |
+|---|---|
+| Load or save aggregates | `IRepository<TEntity, TId>` / `IReadRepository<TEntity, TId>`, or an application interface that extends them |
+| Describe a query | `ISpecification<T>` / `ISpecification<T, TResult>` (SharedKernel) |
+| Save changes, transactions | `IUnitOfWork` |
+| Get repositories dynamically | `IRepositoryFactory` |
+| Background jobs / tenant loop / host admin | `IDatabaseFactory` -> `IDatabaseSession` |
+| Raw SQL / Dapper | `IDatabaseConnectionFactory` (or `IReadConnectionFactory` inside a session) |
+
+## 4. Scheduler boundary (MANDATORY)
+
+The application layer never knows Hangfire or Quartz. Application code uses `IBackgroundJobScheduler`, `IRecurringJobScheduler` and `IBackgroundJob<TArgs>` only.
+
+### Where Hangfire and Quartz are allowed
+- Only in `SystemX.Infrastructure.BackgroundJobs`.
+
+### Where Hangfire and Quartz are FORBIDDEN
+`SharedKernel`, `Contracts`, `Contracts.Validation`, `Application.Abstractions`, and every other `SystemX.Infrastructure.*` package.
+
+## 5. Documentation rules (MANDATORY)
 
 A change is NOT complete until the documentation is updated. Treat missing documentation as a failing build.
 
@@ -175,7 +212,7 @@ Section 5 (consume) MUST explain, with examples:
 - Using a private feed (GitHub Packages or Azure Artifacts) through `nuget.config`, and a local feed for testing (`dotnet nuget add source ./artifacts --name local`).
 - Updating: `dotnet list package --outdated`.
 
-## 4. Agent behavior
+## 6. Agent behavior
 
 - Before adding code, decide which project owns it using the purpose table in section 1. If none fits, ask the maintainer or propose a new package (and update this file first).
 - If a task needs a forbidden reference, STOP. Move the shared code down into `SharedKernel`, `Contracts` or `Application.Abstractions`, or ask the maintainer.
@@ -186,10 +223,11 @@ Section 5 (consume) MUST explain, with examples:
 - When a package is added, renamed or removed, update section 1, section 2, the matrix, the meta-package, the `.slnx`, the README package table and the Mermaid diagram in the same change.
 - Before finishing any task, run the Definition of Done checklist below.
 
-## 5. Definition of Done checklist
+## 7. Definition of Done checklist
 
 - [ ] Build and tests pass in Release.
 - [ ] Architecture tests pass (all rules in section 2).
+- [ ] `scripts/check-boundaries.sh` passes.
 - [ ] `CHANGELOG.md` has an entry under `Unreleased`.
 - [ ] A doc file exists in `docs/<Package>/` for each new or changed public feature, using the template.
 - [ ] Doc samples compile.
@@ -197,7 +235,7 @@ Section 5 (consume) MUST explain, with examples:
 - [ ] Public types have XML comments.
 - [ ] The code lives in the project whose purpose matches it (section 1).
 
-## 6. Enforcement
+## 8. Enforcement
 
 - Architecture tests (NetArchTest or ArchUnitNET) in `tests/SystemX.ArchitectureTests` encode section 2.
 - CI MUST fail when an architecture test fails.

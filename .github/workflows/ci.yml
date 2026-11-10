@@ -21,6 +21,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check architectural boundaries
+        run: bash scripts/check-boundaries.sh
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:

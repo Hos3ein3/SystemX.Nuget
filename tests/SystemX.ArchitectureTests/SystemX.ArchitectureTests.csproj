@@ -17,6 +17,7 @@
     <ProjectReference Include="..\..\src\SystemX.Contracts\SystemX.Contracts.csproj" />
     <ProjectReference Include="..\..\src\SystemX.Contracts.Validation\SystemX.Contracts.Validation.csproj" />
     <ProjectReference Include="..\..\src\SystemX.Infrastructure\SystemX.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\SystemX.Infrastructure.BackgroundJobs\SystemX.Infrastructure.BackgroundJobs.csproj" />
     <ProjectReference Include="..\..\src\SystemX.Infrastructure.Caching\SystemX.Infrastructure.Caching.csproj" />
     <ProjectReference Include="..\..\src\SystemX.Infrastructure.Cors\SystemX.Infrastructure.Cors.csproj" />
     <ProjectReference Include="..\..\src\SystemX.Infrastructure.Cqrs\SystemX.Infrastructure.Cqrs.csproj" />

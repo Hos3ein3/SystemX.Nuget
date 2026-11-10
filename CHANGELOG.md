@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- SystemX.Infrastructure.Persistence.EfCore: provider-neutral EF Core base DbContext (`SystemXDbContext`) implementing `IUnitOfWork`, safe connection string resolution, save pipeline with domain-event dispatching, global query filters (`SoftDelete`, `Archived`, `Tenant`), concurrency exception mapping, multi-tenancy models (`Row`, `Schema`, `Database`), strongly-typed ID value converters, specification evaluator, generic repositories (`IRepository<TEntity, TId>`, `IReadRepository<TEntity, TId>`), repository factory (`EfRepositoryFactory`), database factory (`DatabaseFactory`, `EfDatabaseSession`), connection factory (`DatabaseConnectionFactory`), read connection factory (`EfReadConnectionFactory`), and DI registration (`AddSystemXDbContext`).
+- SystemX.Application.Abstractions: added persistence abstractions `IRepositoryFactory`, `IDatabaseFactory`, `IDatabaseSession`, `IDatabaseConnectionFactory`, `IUnitOfWork`, `ITransactionScope`, `IReadConnectionFactory`, and `UnitOfWorkExtensions`.
+- SystemX.Application.Abstractions: added `IDomainEventDispatcher` in `SystemX.Application.Abstractions.Events` and `ICurrentUser` in `SystemX.Application.Abstractions.Security`.
+- SystemX.Infrastructure.BackgroundJobs: initial package setup and test project scaffolding for background job scheduling and execution.
 - SystemX.SharedKernel: redesigned multi-tenancy models (`TenancyModel.None`, `Row`, `Schema`, `Database`), added strongly-typed `TenantId`, `TenantInfo` with validation and redacted connection string formatting, and tenant markers (`ITenantScoped`, `IMayHaveTenant`, `ISharedEntity`, `TenantInfoExtensions`).
 - SystemX.SharedKernel: added optimistic concurrency primitives (`IConcurrencySafe`, `IHasRowVersion`, `IHasVersion`, `IHasConcurrencyStamp`, `ConcurrencyException`, `VersionedAggregateRoot<TId>`, `StampedAggregateRoot<TId>`).
 - SystemX.SharedKernel: added entity markers (`IHasCreationTime`, `IHasModificationTime`, `IArchivable`, `IActivatable`, `IOrderable`, `IImmutableEntity`, `INotAudited`, `IReadModel`, `IOwnedBy<TOwnerId>`, `ITranslatable<TTranslation>`, `ITranslation`, `TranslationExtensions.Pick`).
@@ -34,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automated release and CI workflows with MinVer.
 
 ### Changed
+- **BREAKING** SystemX.Application.Abstractions: replaced single-parameter generic repositories with two-parameter generic repositories: `IReadRepository<TEntity, TId>` and `IRepository<TEntity, TId>`.
 - **BREAKING** SystemX.SharedKernel: replaced `ITenantScoped` `string TenantId` property with strongly-typed `TenantId TenantId` and added `AssignTenant(TenantId)` method.
 - SystemX.SharedKernel: made `Error` a non-sealed record to support polymorphic error types such as `ValidationError` without breaking existing call sites.
 - SystemX.SharedKernel: `AuditableEntity<TId>` and `AuditableAggregateRoot<TId>` now implement `IHasCreationTime` and `IHasModificationTime`.

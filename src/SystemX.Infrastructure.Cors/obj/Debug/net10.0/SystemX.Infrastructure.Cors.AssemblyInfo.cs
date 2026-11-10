@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright (c) 2026 SystemX")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("CORS configuration and utilities for SystemX.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d41db4cdfb456391f41a023dc0525b8a7230b4d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+495c1d307a97f7cd9076834aa1412322a295e5db")]
 [assembly: System.Reflection.AssemblyProductAttribute("SystemX.Infrastructure.Cors")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SystemX.Infrastructure.Cors")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

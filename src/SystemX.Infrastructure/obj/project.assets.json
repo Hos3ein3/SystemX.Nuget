@@ -1191,6 +1191,7 @@
       "warningProperties": {
         "allWarningsAsErrors": true,
         "noWarn": [
+          "NU5105",
           "NU5128"
         ],
         "warnAsError": [

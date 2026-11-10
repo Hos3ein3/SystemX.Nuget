@@ -47,6 +47,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -752,6 +755,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -1477,6 +1483,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -2202,6 +2211,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -2927,6 +2939,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -3652,6 +3667,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -4377,6 +4395,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -5102,6 +5123,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -5827,6 +5851,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -6552,6 +6579,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -7277,6 +7307,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -8002,6 +8035,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -8727,6 +8763,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -9458,6 +9497,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -10189,6 +10231,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -10914,6 +10959,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -11639,6 +11687,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -12364,6 +12415,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -13168,6 +13222,7 @@
         "warningProperties": {
           "allWarningsAsErrors": true,
           "noWarn": [
+            "NU5105",
             "NU5128"
           ],
           "warnAsError": [
@@ -13875,6 +13930,9 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
           "warnAsError": [
             "NU1605"
           ]

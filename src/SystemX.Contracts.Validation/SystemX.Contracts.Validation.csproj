@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Validation contracts and error models for SystemX.</Description>
+    <PackageTags>$(PackageTags);contracts;validation</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="$(AssemblyName).Tests" />
+  </ItemGroup>
+
+</Project>

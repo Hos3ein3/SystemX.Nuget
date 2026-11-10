@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Description>Domain primitives (Entity, AggregateRoot, ValueObject, Result) for SystemX.</Description>
-    <PackageTags>$(PackageTags);domain;primitives;result;valueobject</PackageTags>
+    <PackageTags>$(PackageTags);ddd;domain;sharedkernel;clean-architecture;result-pattern</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
